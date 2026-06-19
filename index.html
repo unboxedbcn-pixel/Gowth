@@ -3,7 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pack Verano · Victoria Méndez</title>
+<title>Pack Verano · Victoria Méndez | Joyas waterproof edición limitada</title>
+<meta name="description" content="3 joyas de acero inoxidable waterproof. Collar Cascada + Pulsera Ibiza + Pendientes Sol. Edición limitada verano 2026. Solo 47 packs. Envío 24-48h.">
+<meta property="og:title" content="Pack Verano · Victoria Méndez">
+<meta property="og:description" content="Tres joyas para el agua, el sol y cada momento que mereces recordar. Edición limitada verano 2026.">
+<meta property="og:type" content="product">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <!-- ★ TRACKING — pon tu Pixel ID aquí -->
@@ -204,24 +210,43 @@ nav{
 }
 .trust-pill svg{stroke:var(--gold);opacity:0.7;flex-shrink:0}
 
-/* ── STRIP ── */
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* ── STRIP MARQUEE ── */
 .strip{
   background:var(--mid);
   border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  padding:20px 0;overflow:hidden;
+  padding:14px 0;overflow:hidden;
 }
-.strip-inner{
-  display:flex;justify-content:center;align-items:center;
-  gap:0;flex-wrap:wrap;
+.strip-track{
+  display:flex;align-items:center;gap:0;
+  animation:marquee 22s linear infinite;
+  width:max-content;
 }
+.strip:hover .strip-track{animation-play-state:paused}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .strip-item{
   display:flex;align-items:center;gap:9px;
-  padding:8px 32px;border-right:1px solid var(--border);
+  padding:8px 40px;border-right:1px solid var(--border);
   font-size:11px;letter-spacing:1px;text-transform:uppercase;
-  color:rgba(255,255,255,0.4);
+  color:rgba(255,255,255,0.4);white-space:nowrap;
 }
-.strip-item:last-child{border-right:none}
 .strip-item svg{stroke:var(--gold);opacity:0.8}
+
+/* ── TILT CARDS (signature effect) ── */
+.pack-card{transform-style:preserve-3d;will-change:transform}
+.pack-card:hover{background:var(--mid);transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(1.02)}
+.pack-card-halo{
+  position:absolute;inset:0;pointer-events:none;opacity:0;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(200,169,110,0.12) 0%,transparent 60%);
+  transition:opacity .3s;
+}
+.pack-card:hover .pack-card-halo{opacity:1}
 
 /* ── SECTION BASE ── */
 .section{padding:32px 0}
@@ -857,22 +882,23 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 </section>
 
-<!-- STRIP -->
-<div class="strip">
-  <div class="strip-inner">
-    <div class="strip-item">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6 8 4 12 4 15a8 8 0 0016 0c0-3-2-7-8-13z"/></svg>
-      Waterproof
-    </div>
-    <div class="strip-item">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      Joyas de acero inoxidable
-
-    </div>
-    <div class="strip-item">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-      Creado por mujeres para mujeres
-    </div>
+<!-- STRIP MARQUEE -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <!-- Set 1 -->
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6 8 4 12 4 15a8 8 0 0016 0c0-3-2-7-8-13z"/></svg>Waterproof real</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Acero 316L quirúrgico</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Creado por mujeres</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Hipoalergénico</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="13" height="13" rx="1"/><path d="M14 8h4l3 4v4h-7V8z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg>Envío 24–48h</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>30 días devolución</div>
+    <!-- Set 2 — duplicado para el loop -->
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6 8 4 12 4 15a8 8 0 0016 0c0-3-2-7-8-13z"/></svg>Waterproof real</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Acero 316L quirúrgico</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Creado por mujeres</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Hipoalergénico</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="13" height="13" rx="1"/><path d="M14 8h4l3 4v4h-7V8z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg>Envío 24–48h</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>30 días devolución</div>
   </div>
 </div>
 
@@ -967,34 +993,39 @@ document.addEventListener('DOMContentLoaded', () => {
 </section>
 
 <!-- CTA FINAL -->
-<section class="section final-cta" style="background:var(--off);padding:80px 0">
-  <div class="wrap" style="text-align:center">
-    <span class="section-label" style="display:block;margin-bottom:14px">✦ Edición limitada · Verano 2026</span>
-    <h2 class="section-title" style="color:var(--white);margin-bottom:16px">Tu mejor verano<br><em>empieza hoy.</em></h2>
-    <p class="body-text" style="max-width:420px;margin:0 auto 36px">Collar + Pulsera + Pendientes. Waterproof. Baño en oro.<br>Cuando se acabe la temporada, no vuelve hasta el año que viene.</p>
-    <div class="final-price-row">
-      <span class="final-was">61,97€</span>
-      <span class="final-now"><sup style="font-size:28px">€</sup>59</span>
-      <span class="final-free">+ Envío gratis</span>
+<section style="background:var(--off);padding:96px 0;position:relative;overflow:hidden;text-align:center">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(200,169,110,0.07) 0%,transparent 70%);pointer-events:none"></div>
+  <div class="wrap reveal">
+    <span style="display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px">✦ Edición limitada · Solo 47 packs · Verano 2026</span>
+    <h2 style="font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,64px);line-height:1.08;color:var(--white);margin-bottom:18px;letter-spacing:-0.3px">
+      Tu mejor verano<br><em style="font-style:italic;color:var(--gold2)">empieza hoy.</em>
+    </h2>
+    <p style="font-size:14px;line-height:1.85;color:var(--body);max-width:400px;margin:0 auto 40px;font-weight:300">
+      Collar + Pulsera + Pendientes. Waterproof. Baño en oro.<br>Cuando se acabe la temporada, no vuelve hasta el año que viene.
+    </p>
+    <div style="display:flex;align-items:baseline;justify-content:center;gap:16px;margin-bottom:36px">
+      <span style="font-family:var(--serif);font-size:22px;color:rgba(255,255,255,0.2);text-decoration:line-through">61,97€</span>
+      <span style="font-family:var(--serif);font-size:72px;color:var(--white);font-weight:400;line-height:1"><sup style="font-size:32px;vertical-align:super">€</sup>59</span>
+      <span style="font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;background:var(--gold);color:var(--black);padding:6px 14px;align-self:center">+ ENVÍO GRATIS</span>
     </div>
-    <a href="https://victoriamendez.es" class="hero-cta cta-btn" style="margin:0 auto 32px">
-      Conseguir el Pack Verano <span style="margin-left:8px">→</span>
+    <a href="https://victoriamendez.es" class="cta-btn" style="display:inline-flex;align-items:center;gap:12px;background:var(--white);color:var(--black);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:20px 48px;border:none;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s;margin-bottom:36px">
+      Conseguir el Pack Verano <span style="font-size:15px">→</span>
     </a>
-    <div class="final-guarantees">
-      <span class="final-g">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        Pago seguro
+    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:28px;margin-top:4px">
+      <span style="font-size:11px;color:rgba(255,255,255,0.25);display:flex;align-items:center;gap:7px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Pago 100% seguro
       </span>
-      <span class="final-g">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        Envío 24–48h
+      <span style="font-size:11px;color:rgba(255,255,255,0.25);display:flex;align-items:center;gap:7px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Envío en 24–48h
       </span>
-      <span class="final-g">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        30 días devolución
+      <span style="font-size:11px;color:rgba(255,255,255,0.25);display:flex;align-items:center;gap:7px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        30 días devolución gratis
       </span>
-      <span class="final-g">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <span style="font-size:11px;color:rgba(255,255,255,0.25);display:flex;align-items:center;gap:7px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         +10 años de trayectoria
       </span>
     </div>
@@ -1023,6 +1054,35 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded',()=>{
   const btn=document.getElementById('hero-cta');
   if(btn){const spans=btn.querySelectorAll('span');if(spans[0])spans[0].textContent=C.hero_boton;}
+
+  // Scroll reveal
+  const reveals=document.querySelectorAll('.section,.pack-header,.reviews-intro,.founder-wrap,.faq-wrap');
+  reveals.forEach(el=>el.classList.add('reveal'));
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+  },{threshold:0.05});
+  document.querySelectorAll('.reveal').forEach(el=>{io.observe(el);});
+  // Safety: reveal all after 6s in case IO misses
+  setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible')),6000);
+
+  // Tilt effect on pack cards
+  document.querySelectorAll('.pack-card').forEach(card=>{
+    // add halo div
+    const halo=document.createElement('div');halo.className='pack-card-halo';card.appendChild(halo);
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+      const rx=(y-0.5)*-10,ry=(x-0.5)*10;
+      card.style.setProperty('--rx',rx+'deg');
+      card.style.setProperty('--ry',ry+'deg');
+      card.style.setProperty('--mx',(x*100)+'%');
+      card.style.setProperty('--my',(y*100)+'%');
+    });
+    card.addEventListener('mouseleave',()=>{
+      card.style.setProperty('--rx','0deg');
+      card.style.setProperty('--ry','0deg');
+    });
+  });
 });
 </script>
 
