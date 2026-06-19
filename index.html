@@ -68,9 +68,52 @@ if (TRACKING.meta_pixel_id !== 'TU_PIXEL_ID_AQUI') {
 /* ── RESET ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--black);color:var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{display:block;max-width:100%}
+body{font-family:var(--sans);background:var(--black);color:var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden;cursor:none}
+img{display:block;max-width:100%;loading:lazy}
 a{text-decoration:none;color:inherit}
+
+/* ── CURSOR PERSONALIZADO ── */
+.cursor{
+  position:fixed;top:0;left:0;pointer-events:none;z-index:9999;
+  mix-blend-mode:difference;
+}
+.cursor-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--gold);
+  transform:translate(-50%,-50%);
+  transition:transform .1s ease,width .2s,height .2s;
+}
+.cursor-ring{
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid rgba(200,169,110,0.5);
+  transform:translate(-50%,-50%);
+  transition:transform .08s ease,width .25s,height .25s,border-color .2s;
+  margin-top:-36px;
+}
+body:has(a:hover) .cursor-dot,body:has(button:hover) .cursor-dot{width:14px;height:14px}
+body:has(a:hover) .cursor-ring,body:has(button:hover) .cursor-ring{width:52px;height:52px;border-color:var(--gold)}
+@media(hover:none){.cursor{display:none}body{cursor:auto}}
+
+/* ── HERO TEXT REVEAL ── */
+.hero-reveal-wrap{overflow:hidden;display:block}
+.hero-reveal-text{
+  display:block;
+  transform:translateY(110%);
+  animation:slideUp .9s cubic-bezier(.16,1,.3,1) forwards;
+}
+.hero-reveal-text.delay-1{animation-delay:.15s}
+.hero-reveal-text.delay-2{animation-delay:.3s}
+.hero-reveal-text.delay-3{animation-delay:.45s}
+@keyframes slideUp{to{transform:translateY(0)}}
+
+/* ── STOCK BAR ── */
+.stock-bar-wrap{margin-top:12px}
+.stock-bar-label{display:flex;justify-content:space-between;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.stock-bar-track{height:2px;background:rgba(200,169,110,0.12);border-radius:1px;overflow:hidden}
+.stock-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold3),var(--gold));border-radius:1px;width:0;transition:width 1.4s cubic-bezier(.16,1,.3,1)}
+
+/* ── COUNT UP ── */
+.count-up{display:inline-block}
 
 /* ── LAYOUT ── */
 .wrap{max-width:1080px;margin:0 auto;padding:0 32px}
@@ -784,6 +827,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<!-- CURSOR -->
+<div class="cursor" id="cursor">
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+</div>
+
 <!-- ANN -->
 <div class="ann" id="ann"></div>
 
@@ -823,9 +872,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <img src="pack-verano.jpg" alt="Pack Verano">
   </div>
   <div class="hero-content">
-    <div class="hero-eyebrow" id="hero-label"></div>
-    <h1 class="hero-h1" id="hero-h1"></h1>
-    <p class="hero-sub" id="hero-sub"></p>
+    <div class="hero-eyebrow hero-reveal-wrap"><span class="hero-reveal-text" id="hero-label"></span></div>
+    <h1 class="hero-h1" id="hero-h1" style="overflow:hidden"></h1>
+    <p class="hero-sub" id="hero-sub" style="opacity:0;animation:slideUp .8s .55s cubic-bezier(.16,1,.3,1) forwards"></p>
     <div class="hero-price">
       <div class="hero-price-was" id="hero-was"></div>
       <div class="hero-price-now">
@@ -922,6 +971,15 @@ document.addEventListener('DOMContentLoaded', () => {
         <a class="pack-cta cta-btn" id="pack-cta">
           Conseguir el Pack <span style="margin-left:8px">→</span>
         </a>
+        <div class="stock-bar-wrap">
+          <div class="stock-bar-label">
+            <span>⬤ Stock disponible</span>
+            <span>47 / 200 packs</span>
+          </div>
+          <div class="stock-bar-track">
+            <div class="stock-bar-fill" id="stock-bar-fill"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -943,7 +1001,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="wrap">
     <div class="reviews-intro">
       <div class="reviews-stars">★★★★★</div>
-      <div class="reviews-count">4.8 / 5 · Más de 4.800 clientas satisfechas</div>
+      <div class="reviews-count">4.8 / 5 · Más de <span class="count-up" data-target="4800">0</span> clientas satisfechas</div>
       <span class="section-label" style="margin-top:20px" id="rev-label"></span>
       <h2 class="section-title" id="rev-h2"></h2>
     </div>
@@ -1018,6 +1076,57 @@ document.addEventListener('DOMContentLoaded', () => {
   <span class="sticky-price" id="sticky-price"></span>
   <button class="sticky-btn" id="sticky-cta"></button>
 </div>
+
+<!-- CURSOR + ANIMACIONES MODERNAS -->
+<script>
+(function(){
+  // Cursor
+  const dot=document.getElementById('cursor-dot');
+  const ring=document.getElementById('cursor-ring');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`;});
+  function lerp(a,b,t){return a+(b-a)*t}
+  function animRing(){rx=lerp(rx,mx,.12);ry=lerp(ry,my,.12);ring.style.transform=`translate(${rx}px,${ry}px) translate(-50%,-50%)`;requestAnimationFrame(animRing);}
+  animRing();
+  document.querySelectorAll('a,button,.pack-card,.faq-item').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{dot.style.transform+=' scale(2)';ring.style.width='52px';ring.style.height='52px';});
+    el.addEventListener('mouseleave',()=>{dot.style.width='';dot.style.height='';ring.style.width='';ring.style.height='';});
+  });
+
+  // Hero h1 text reveal — split lines
+  document.addEventListener('DOMContentLoaded',()=>{
+    const h1=document.getElementById('hero-h1');
+    if(h1&&h1.innerHTML){
+      const parts=h1.innerHTML.split('<br>');
+      h1.innerHTML=parts.map((p,i)=>`<span class="hero-reveal-wrap"><span class="hero-reveal-text delay-${i+1}">${p}</span></span>`).join('');
+    }
+
+    // Barra de stock
+    setTimeout(()=>{
+      const fill=document.getElementById('stock-bar-fill');
+      if(fill)fill.style.width='23.5%';
+    },800);
+
+    // Count-up
+    const countEls=document.querySelectorAll('.count-up');
+    const countIO=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(!e.isIntersecting)return;
+        const el=e.target,target=+el.dataset.target,dur=2000,start=performance.now();
+        function step(now){
+          const p=Math.min((now-start)/dur,1);
+          const ease=1-Math.pow(1-p,3);
+          el.textContent=Math.round(ease*target).toLocaleString('es-ES');
+          if(p<1)requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        countIO.unobserve(el);
+      });
+    },{threshold:0.3});
+    countEls.forEach(el=>countIO.observe(el));
+  });
+})();
+</script>
 
 <!-- Fix hero CTA text after render -->
 <script>
