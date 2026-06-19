@@ -254,8 +254,8 @@ nav{
 
 /* ── STRIP MARQUEE ── */
 .strip{
-  background:var(--mid);
-  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  background:#DDD6C8;
+  border-top:1px solid rgba(140,106,40,0.2);border-bottom:1px solid rgba(140,106,40,0.2);
   padding:14px 0;overflow:hidden;
 }
 .strip-track{
@@ -267,11 +267,11 @@ nav{
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .strip-item{
   display:flex;align-items:center;gap:9px;
-  padding:8px 40px;border-right:1px solid var(--border);
+  padding:8px 40px;border-right:1px solid rgba(140,106,40,0.25);
   font-size:11px;letter-spacing:1px;text-transform:uppercase;
-  color:#6B5F4A;white-space:nowrap;
+  color:#4A3E2C;white-space:nowrap;font-weight:500;
 }
-.strip-item svg{stroke:var(--gold);opacity:0.8}
+.strip-item svg{stroke:#4A3E2C;opacity:0.7}
 
 /* ── TILT CARDS (signature effect) ── */
 .pack-card{transform-style:preserve-3d;will-change:transform}
