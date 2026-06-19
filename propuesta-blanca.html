@@ -87,8 +87,9 @@ a{text-decoration:none;color:inherit}
 .cursor-ring{
   width:36px;height:36px;border-radius:50%;
   border:1px solid rgba(200,169,110,0.45);
-  position:absolute;
+  position:fixed;top:0;left:0;
   transform:translate(-50%,-50%);
+  pointer-events:none;z-index:9998;
 }
 @media(hover:none){.cursor{display:none}body{cursor:auto}}
 
@@ -1086,12 +1087,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('mousemove',e=>{
     mx=e.clientX;my=e.clientY;
-    dot.style.left=mx+'px';dot.style.top=my+'px';
+    cursor.style.left=mx+'px';cursor.style.top=my+'px';
     if(!active){active=true;cursor.classList.add('active');}
   });
   function lerp(a,b,t){return a+(b-a)*t}
   function animRing(){
-    rx=lerp(rx,mx,.1);ry=lerp(ry,my,.1);
+    rx=lerp(rx,mx,.12);ry=lerp(ry,my,.12);
     ring.style.left=rx+'px';ring.style.top=ry+'px';
     requestAnimationFrame(animRing);
   }
