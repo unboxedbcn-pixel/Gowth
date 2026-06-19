@@ -751,21 +751,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('rev-h2').innerHTML=`${C.rev_h2_1}<br><em>${C.rev_h2_2}</em>`;
   const rg=document.getElementById('reviews-grid');
   C.reviews.forEach(r=>{rg.innerHTML+=`<div class="review"><div class="review-stars">★★★★★</div><p class="review-text">${r.t}</p><div class="review-author">${r.a}<span class="review-verified">✓ Verificada</span></div></div>`});
-  // Urgencia
-  document.getElementById('urg-label').textContent=C.urg_label;
-  document.getElementById('urg-h2').innerHTML=`${C.urg_h2_1}<br><em>${C.urg_h2_2}</em>`;
-  document.getElementById('urg-sub').textContent=C.urg_sub;
-  document.getElementById('stock-text').textContent=C.stock;
-  // Countdown
-  const fin=new Date(C.fecha_fin);
-  function tick(){
-    const d=Math.max(0,fin-new Date()),pad=n=>String(Math.floor(n)).padStart(2,'0');
-    document.getElementById('cd-d').textContent=pad(d/86400000);
-    document.getElementById('cd-h').textContent=pad((d%86400000)/3600000);
-    document.getElementById('cd-m').textContent=pad((d%3600000)/60000);
-    document.getElementById('cd-s').textContent=pad((d%60000)/1000);
-  }
-  tick();setInterval(tick,1000);
   // Countdown hero pack
   const finPack=new Date(C.fecha_fin);
   function tickPack(){
@@ -787,17 +772,6 @@ document.addEventListener('DOMContentLoaded', () => {
     d.onclick=()=>{const o=d.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!o)d.classList.add('open');};
     fw.appendChild(d);
   });
-  // CTA Final
-  document.getElementById('cta-label').textContent=C.cta_label;
-  document.getElementById('cta-h2').innerHTML=`${C.cta_h2_1}<br><em>${C.cta_h2_2}</em>`;
-  document.getElementById('cta-sub').textContent=C.cta_sub;
-  document.getElementById('cta-was').textContent=C.precio_was;
-  document.getElementById('cta-now').innerHTML=`<sup>€</sup>${C.precio_now.replace('€','')}`;
-  const ctaBtn=document.getElementById('cta-btn');
-  ctaBtn.textContent=C.cta_btn;
-  ctaBtn.href=C.url_compra;
-  const gWrap=document.getElementById('cta-guarantees');
-  C.garantias.forEach(g=>{gWrap.innerHTML+=`<span class="final-g"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>${g}</span>`});
   // Footer
   document.getElementById('foot-logo').textContent=C.marca;
   document.getElementById('foot-tienda').href=C.url_tienda;
