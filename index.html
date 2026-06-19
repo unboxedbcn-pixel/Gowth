@@ -594,6 +594,7 @@ const C = {
   ],
   precio_was:    "61,97€",
   precio_now:    "59€",
+  precio_badge:  "Ahorra 2,97€",
   precio_sub:    "Envío gratuito · Pago seguro · 30 días para devolver",
 
   ben_label:     "Por qué Victoria Méndez",
@@ -714,7 +715,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('precio-was').innerHTML=`Por separado: <span>${C.precio_was}</span>`;
   document.getElementById('precio-now').innerHTML=`<sup>€</sup>${C.precio_now.replace('€','')}`;
   document.getElementById('precio-badge').textContent=C.precio_badge;
-  document.getElementById('precio-sub').innerHTML=`</strong> · ${C.precio_sub}`;
+  document.getElementById('precio-sub').innerHTML=`<strong style="color:var(--gold)">${C.precio_badge}</strong> · ${C.precio_sub}`;
   document.getElementById('pack-cta').textContent=C.hero_boton;
   document.getElementById('pack-cta').href=C.url_compra;
   // Beneficios
@@ -764,6 +765,17 @@ document.addEventListener('DOMContentLoaded', () => {
     d.onclick=()=>{const o=d.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!o)d.classList.add('open');};
     fw.appendChild(d);
   });
+  // CTA Final
+  document.getElementById('cta-label').textContent=C.cta_label;
+  document.getElementById('cta-h2').innerHTML=`${C.cta_h2_1}<br><em>${C.cta_h2_2}</em>`;
+  document.getElementById('cta-sub').textContent=C.cta_sub;
+  document.getElementById('cta-was').textContent=C.precio_was;
+  document.getElementById('cta-now').innerHTML=`<sup>€</sup>${C.precio_now.replace('€','')}`;
+  const ctaBtn=document.getElementById('cta-btn');
+  ctaBtn.textContent=C.cta_btn;
+  ctaBtn.href=C.url_compra;
+  const gWrap=document.getElementById('cta-guarantees');
+  C.garantias.forEach(g=>{gWrap.innerHTML+=`<span class="final-g"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>${g}</span>`});
   // Footer
   document.getElementById('foot-logo').textContent=C.marca;
   document.getElementById('foot-tienda').href=C.url_tienda;
@@ -804,9 +816,9 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
   <div class="hero-pack-image">
     <div class="hero-pack-cd">
-      <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-d">00</span><span class="hero-pack-cd-lbl">dies</span></div>
+      <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-d">00</span><span class="hero-pack-cd-lbl">días</span></div>
       <span class="hero-pack-cd-sep">:</span>
-      <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-h">00</span><span class="hero-pack-cd-lbl">hores</span></div>
+      <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-h">00</span><span class="hero-pack-cd-lbl">horas</span></div>
       <span class="hero-pack-cd-sep">:</span>
       <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-m">00</span><span class="hero-pack-cd-lbl">min</span></div>
       <span class="hero-pack-cd-sep">:</span>
@@ -829,7 +841,6 @@ document.addEventListener('DOMContentLoaded', () => {
       <span class="hero-cta-arrow">→</span>
     </a>
     <div class="hero-trust">
-      </span>
       <span class="trust-pill">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         4.8 / 5
@@ -986,7 +997,6 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     </div>
   </div>
-  </div>
 </section>
 
 <!-- FAQ -->
@@ -997,6 +1007,22 @@ document.addEventListener('DOMContentLoaded', () => {
       <h2 class="section-title" id="faq-h2"></h2>
     </div>
     <div class="faq-wrap" id="faq-wrap"></div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="section final-cta" style="background:var(--off)">
+  <div class="wrap">
+    <span class="section-label" id="cta-label"></span>
+    <h2 class="section-title" id="cta-h2"></h2>
+    <p class="body-text" id="cta-sub"></p>
+    <div class="final-price-row">
+      <span class="final-was" id="cta-was"></span>
+      <span class="final-now" id="cta-now"></span>
+      <span class="final-free">+ Envío gratis</span>
+    </div>
+    <a class="hero-cta cta-btn" id="cta-btn" style="margin:0 auto"></a>
+    <div class="final-guarantees" id="cta-guarantees"></div>
   </div>
 </section>
 
@@ -1022,7 +1048,6 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded',()=>{
   const btn=document.getElementById('hero-cta');
   if(btn){const spans=btn.querySelectorAll('span');if(spans[0])spans[0].textContent=C.hero_boton;}
-  document.getElementById('hero-tag-price').textContent=C.hero_precio_now;
 });
 </script>
 
