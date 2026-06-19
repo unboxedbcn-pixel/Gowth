@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pack Verano · Victoria Méndez | Joyas waterproof edición limitada</title>
+<meta name="description" content="3 joyas de acero inoxidable waterproof. Collar Cascada + Pulsera Ibiza + Pendientes Sol. Edición limitada verano 2026. Solo 47 packs. Envío 24-48h.">
+<meta property="og:title" content="Pack Verano · Victoria Méndez">
+<meta property="og:description" content="Tres joyas para el agua, el sol y cada momento que mereces recordar. Edición limitada verano 2026.">
+<meta property="og:type" content="product">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- ★ TRACKING — pon tu Pixel ID aquí -->
+<script>
+const TRACKING = {
+  meta_pixel_id: "TU_PIXEL_ID_AQUI",   // ← reemplaza con tu ID de Meta Pixel
+  pack_nombre:   "Pack Verano 2026",
+  pack_precio:   59,
+  pack_moneda:   "EUR",
+  pack_id:       "PACK-VERANO-2026",
+};
+</script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+// Init inmediato en <head> — forma correcta según Meta
+if (TRACKING.meta_pixel_id !== 'TU_PIXEL_ID_AQUI') {
+  fbq('init', TRACKING.meta_pixel_id);
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent', {
+    content_ids:  [TRACKING.pack_id],
+    content_name: TRACKING.pack_nombre,
+    content_type: 'product',
+    value:        TRACKING.pack_precio,
+    currency:     TRACKING.pack_moneda,
+  });
+}
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=TU_PIXEL_ID_AQUI&ev=PageView&noscript=1">
+</noscript>
+
+<style>
+/* ── TOKENS ── */
+:root {
+  --black:   #080808;
+  --off:     #0F0F0F;
+  --mid:     #181818;
+  --sand:    #F7F2EA;
+  --sand2:   #EEE8DB;
+  --white:   #FFFFFF;
+  --gold:    #D4A853;
+  --gold2:   #EDD077;
+  --gold3:   #A07828;
+  --body:    #A09890;
+  --border:  rgba(212,168,83,0.22);
+  --serif:   'Playfair Display', Georgia, serif;
+  --sans:    'Inter', system-ui, sans-serif;
+}
+
+/* ── RESET ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--black);color:var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden;cursor:none}
+img{display:block;max-width:100%;loading:lazy}
+a{text-decoration:none;color:inherit}
+
+/* ── CURSOR PERSONALIZADO ── */
+.cursor{
+  position:fixed;top:-100px;left:-100px;pointer-events:none;z-index:9999;
+  opacity:0;transition:opacity .3s;
+}
+.cursor.active{opacity:1}
+.cursor-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--gold);
+  position:absolute;
+  transform:translate(-50%,-50%);
+}
+.cursor-ring{
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid rgba(200,169,110,0.45);
+  position:absolute;
+  transform:translate(-50%,-50%);
+}
+@media(hover:none){.cursor{display:none}body{cursor:auto}}
+
+/* ── HERO TEXT REVEAL ── */
+@keyframes slideUp{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
+
+/* ── STOCK BAR ── */
+.stock-bar-wrap{margin-top:12px}
+.stock-bar-label{display:flex;justify-content:space-between;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.stock-bar-track{height:2px;background:rgba(200,169,110,0.12);border-radius:1px;overflow:hidden}
+.stock-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold3),var(--gold));border-radius:1px;width:0;transition:width 1.4s cubic-bezier(.16,1,.3,1)}
+
+/* ── COUNT UP ── */
+.count-up{display:inline-block}
+
+/* ── LAYOUT ── */
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+
+/* ── ANNOUNCEMENT ── */
+.ann{background:var(--gold);color:var(--black);text-align:center;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:11px 16px}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,10,10,0.92);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:18px 32px;
+  display:flex;align-items:center;justify-content:center;
+}
+.nav-logo{
+  font-family:var(--serif);font-size:20px;font-weight:400;
+  letter-spacing:5px;text-transform:uppercase;color:var(--white);
+}
+.nav-logo em{font-style:italic;color:var(--gold)}
+
+/* ── HERO ── */
+.hero{
+  min-height:96vh;
+  position:relative;overflow:hidden;
+}
+.hero::after{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:5;
+  background:radial-gradient(ellipse 90% 70% at 50% 100%, rgba(0,0,0,0.35) 0%, transparent 60%);
+}
+
+/* LEFT — imagen/visual */
+.hero-visual{
+  position:absolute;inset:0;z-index:0;
+  overflow:hidden;
+}
+.hero-visual-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 30%, rgba(200,169,110,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 80%, rgba(200,169,110,0.06) 0%, transparent 60%);
+}
+/* Foto placeholder — reemplaza con <img src="tu-foto.jpg"> */
+.hero-img-placeholder{
+  position:relative;z-index:2;
+  width:72%;max-width:340px;
+  aspect-ratio:3/4;
+  background:linear-gradient(145deg,rgba(200,169,110,0.12),rgba(200,169,110,0.04));
+  border:1px solid var(--border);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+}
+.hero-img-placeholder span{
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,0.2);text-align:center;padding:0 20px;
+}
+.hero-img-tag{
+  position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
+  background:rgba(10,10,10,0.85);backdrop-filter:blur(8px);
+  border:1px solid var(--border);
+  padding:10px 18px;white-space:nowrap;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-img-tag-price{font-family:var(--serif);font-size:22px;color:var(--gold2);font-weight:400}
+.hero-img-tag-label{font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:1.5px;text-transform:uppercase}
+
+/* RIGHT — contenido */
+.hero-content{
+  position:relative;z-index:2;
+  height:96vh;
+  padding:80px 64px 80px 56px;
+  display:flex;flex-direction:column;justify-content:center;
+  max-width:560px;
+  background:transparent;
+}
+/* Imagen del pack — lado derecho del hero */
+.hero-pack-image{
+  position:absolute;z-index:1;
+  top:50%;right:25%;
+  transform:translateY(-50%);
+  width:34%;max-width:380px;
+  filter:drop-shadow(0 30px 60px rgba(0,0,0,0.5));
+}
+.hero-pack-image img{
+  width:100%;height:auto;display:block;
+}
+@media(max-width:900px){
+  .hero-pack-image{display:none}
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:28px;
+}
+.hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--gold)}
+.hero-h1{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(44px,5vw,68px);line-height:1.05;
+  color:var(--white);margin-bottom:24px;
+  letter-spacing:-0.5px;
+}
+.hero-h1 em{font-style:italic;color:var(--gold2)}
+.hero-sub{
+  font-size:14px;line-height:1.85;color:var(--body);
+  max-width:380px;margin-bottom:40px;font-weight:300;
+}
+.hero-price{margin-bottom:32px}
+.hero-price-was{font-size:11px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;font-weight:600;margin-bottom:4px}
+.hero-price-now{
+  font-family:var(--serif);font-size:52px;color:var(--white);font-weight:400;line-height:1;
+  display:flex;align-items:baseline;gap:10px;
+}
+.hero-price-now sup{font-size:24px;margin-right:2px}
+.hero-price-save{
+  font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--black);background:var(--gold);
+  padding:4px 10px;border-radius:2px;align-self:center;
+}
+.hero-cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  background:var(--white);color:var(--black);
+  font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
+  padding:18px 40px;border:none;cursor:pointer;
+  transition:background .2s,transform .15s;
+  width:fit-content;
+}
+.hero-cta:hover{background:var(--gold2);transform:translateY(-1px)}
+.hero-cta-arrow{font-size:14px;transition:transform .2s}
+.hero-cta:hover .hero-cta-arrow{transform:translateX(4px)}
+.hero-trust{
+  display:flex;flex-wrap:wrap;gap:16px;margin-top:24px;
+}
+.trust-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.3px;
+}
+.trust-pill svg{stroke:var(--gold);opacity:0.7;flex-shrink:0}
+
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── STRIP MARQUEE ── */
+.strip{
+  background:var(--mid);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:14px 0;overflow:hidden;
+}
+.strip-track{
+  display:flex;align-items:center;gap:0;
+  animation:marquee 22s linear infinite;
+  width:max-content;
+}
+.strip:hover .strip-track{animation-play-state:paused}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.strip-item{
+  display:flex;align-items:center;gap:9px;
+  padding:8px 40px;border-right:1px solid var(--border);
+  font-size:11px;letter-spacing:1px;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);white-space:nowrap;
+}
+.strip-item svg{stroke:var(--gold);opacity:0.8}
+
+/* ── TILT CARDS (signature effect) ── */
+.pack-card{transform-style:preserve-3d;will-change:transform}
+.pack-card:hover{background:var(--mid);transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(1.02)}
+.pack-card-halo{
+  position:absolute;inset:0;pointer-events:none;opacity:0;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(200,169,110,0.12) 0%,transparent 60%);
+  transition:opacity .3s;
+}
+.pack-card:hover .pack-card-halo{opacity:1}
+
+/* ── SECTION BASE ── */
+.section{padding:32px 0}
+.section.dark{background:var(--off)}
+.section.sand{background:var(--sand);color:var(--black)}
+.section.sand .body-text{color:#5A5040}
+
+.section-label{
+  display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;
+}
+.section-title{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(32px,4vw,50px);line-height:1.1;
+  color:var(--white);letter-spacing:-0.3px;
+}
+.section-title.dark-title{color:var(--black)}
+.section-title em{font-style:italic;color:var(--gold)}
+.section-title.dark-title em{color:var(--gold3)}
+.body-text{font-size:14px;line-height:1.85;color:var(--body);font-weight:300}
+
+/* ── FUNDADORA ── */
+.founder-wrap{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:start;
+}
+/* Vídeo */
+.video-box{
+  position:relative;
+  background:var(--mid);
+  cursor:pointer;
+  overflow:hidden;
+}
+.video-box::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,10,10,0.5) 0%,transparent 50%);
+}
+.video-inner{
+  aspect-ratio:4/5;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+  background:linear-gradient(145deg,#1C1508,#111);
+}
+.play-ring{
+  width:72px;height:72px;border-radius:50%;
+  border:1px solid rgba(200,169,110,0.4);
+  display:flex;align-items:center;justify-content:center;
+  transition:border-color .3s,transform .2s;
+  position:relative;z-index:2;
+}
+.play-ring::before{
+  content:'';position:absolute;inset:6px;border-radius:50%;
+  background:var(--gold);transition:background .2s;
+}
+.play-ring span{position:relative;z-index:2;font-size:16px;color:var(--black);margin-left:3px}
+.video-box:hover .play-ring{transform:scale(1.08);border-color:var(--gold)}
+.video-label{position:relative;z-index:2;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3)}
+.video-caption{
+  position:absolute;bottom:0;left:0;right:0;z-index:3;
+  padding:20px 24px;
+  background:linear-gradient(to top,rgba(10,10,10,0.9),transparent);
+  font-family:var(--serif);font-style:italic;font-size:13px;color:rgba(255,255,255,0.5);
+}
+
+/* Texto fundadora */
+.founder-text{padding-top:8px}
+.founder-quote{
+  font-family:var(--serif);font-style:italic;
+  font-size:20px;line-height:1.65;color:rgba(255,255,255,0.85);
+  border-left:1px solid var(--gold);padding-left:22px;
+  margin:28px 0;
+}
+.founder-sig{
+  font-family:var(--serif);font-style:italic;
+  font-size:26px;color:var(--gold);margin-top:28px;font-weight:400;
+}
+
+/* ── PACK ── */
+.pack-header{text-align:center;margin-bottom:56px}
+.pack-header .section-title{color:var(--white)}
+.pack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-bottom:2px}
+.pack-card{
+  background:var(--off);padding:40px 28px;
+  transition:background .25s;
+  position:relative;overflow:hidden;
+}
+.pack-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:0;transition:opacity .3s;
+}
+.pack-card:hover{background:var(--mid)}
+.pack-card:hover::before{opacity:1}
+.pack-card-num{
+  font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);opacity:0.6;margin-bottom:20px;
+}
+/* Foto placeholder pieza */
+.pack-card-img{
+  width:100%;aspect-ratio:1;
+  background:linear-gradient(145deg,rgba(200,169,110,0.08),rgba(200,169,110,0.02));
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:52px;margin-bottom:24px;
+  /* Reemplaza el emoji por <img src="tu-foto.jpg" style="width:100%;height:100%;object-fit:cover"> */
+}
+.pack-card-name{
+  font-family:var(--serif);font-size:20px;font-weight:400;
+  color:var(--white);margin-bottom:8px;
+}
+.pack-card-desc{font-size:12px;line-height:1.7;color:var(--body);margin-bottom:16px;font-weight:300}
+.pack-card-price{font-size:12px;color:rgba(255,255,255,0.2);text-decoration:line-through}
+
+/* Precio total */
+.pack-total{
+  background:var(--mid);border:1px solid var(--border);
+  padding:40px 48px;
+  display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;
+}
+.pack-total-left .was{font-size:12px;color:rgba(255,255,255,0.2);margin-bottom:6px}
+.pack-total-left .was span{text-decoration:line-through}
+.pack-total-price{
+  font-family:var(--serif);font-size:72px;color:var(--white);font-weight:400;line-height:1;
+}
+.pack-total-price sup{font-size:32px;vertical-align:super}
+.pack-total-sub{font-size:12px;color:var(--body);margin-top:8px;line-height:1.6}
+.pack-total-sub strong{color:var(--gold)}
+.pack-total-right{display:flex;flex-direction:column;gap:14px;align-items:flex-end}
+
+.pack-cta{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--white);color:var(--black);
+  font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
+  padding:18px 40px;border:none;cursor:pointer;
+  transition:background .2s;white-space:nowrap;
+}
+.pack-cta:hover{background:var(--gold2)}
+
+/* ── BENEFICIOS ── */
+.benefits-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:rgba(255,255,255,0.08);
+  margin-top:56px;
+}
+.benefit{
+  background:var(--sand);padding:40px 32px;
+  border-bottom:2px solid transparent;
+  transition:border-color .2s;
+}
+.benefit:hover{border-bottom-color:var(--gold3)}
+.benefit-icon{
+  width:36px;height:36px;margin-bottom:20px;
+  color:var(--gold3);
+}
+.benefit-title{
+  font-family:var(--serif);font-size:18px;font-weight:400;
+  color:var(--black);margin-bottom:10px;
+}
+.benefit-text{font-size:13px;line-height:1.8;color:#5A5040;font-weight:300}
+
+/* ── REVIEWS ── */
+.reviews-intro{text-align:center;margin-bottom:56px}
+.reviews-stars{color:var(--gold);font-size:20px;letter-spacing:4px;margin-bottom:8px}
+.reviews-count{font-size:12px;color:var(--body);letter-spacing:1px}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review{
+  background:var(--mid);border:1px solid var(--border);
+  padding:32px;position:relative;overflow:hidden;
+  transition:border-color .25s;
+}
+.review:hover{border-color:rgba(200,169,110,0.4)}
+.review::before{
+  content:'"';
+  position:absolute;top:-10px;right:20px;
+  font-family:var(--serif);font-size:120px;
+  color:rgba(200,169,110,0.06);line-height:1;
+  pointer-events:none;
+}
+.review-stars{color:var(--gold);font-size:12px;letter-spacing:3px;margin-bottom:16px}
+.review-text{
+  font-family:var(--serif);font-style:italic;
+  font-size:15px;line-height:1.75;color:rgba(255,255,255,0.75);
+  margin-bottom:20px;
+}
+.review-author{
+  font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--body);display:flex;align-items:center;gap:10px;
+}
+.review-author::before{content:'';display:block;width:20px;height:1px;background:var(--gold);opacity:0.5}
+.review-verified{
+  margin-left:auto;font-size:9px;color:var(--gold);
+  letter-spacing:1px;
+}
+
+/* ── URGENCIA ── */
+.urgency-inner{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+}
+.urgency-text .section-title{color:var(--white)}
+.urgency-sub{font-size:13px;color:var(--body);line-height:1.8;margin-top:16px;max-width:400px;font-weight:300}
+.urgency-stock{
+  display:flex;align-items:center;gap:10px;margin-top:24px;
+}
+.stock-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.stock-text{font-size:12px;color:var(--gold);letter-spacing:1px}
+
+/* Countdown */
+.cd-wrap{display:flex;gap:16px;align-items:center;justify-content:center}
+.cd-block{text-align:center}
+.cd-num{
+  display:block;font-family:var(--serif);font-size:56px;font-weight:400;
+  color:var(--white);line-height:1;
+  border-bottom:1px solid var(--border);padding-bottom:10px;margin-bottom:8px;
+  min-width:80px;
+}
+.cd-lbl{display:block;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--body)}
+.cd-sep{font-family:var(--serif);font-size:40px;color:var(--gold);opacity:0.3;margin-bottom:24px}
+
+/* ── FAQ ── */
+.faq-wrap{max-width:680px;margin:56px auto 0}
+.faq-item{border-bottom:1px solid var(--border);padding:22px 0;cursor:pointer}
+.faq-item:first-child{border-top:1px solid var(--border)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.faq-q-text{
+  font-family:var(--serif);font-size:17px;font-weight:400;
+  color:rgba(255,255,255,0.8);transition:color .2s;
+}
+.faq-item:hover .faq-q-text{color:var(--white)}
+.faq-icon{
+  flex-shrink:0;width:26px;height:26px;
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold);font-size:16px;
+  transition:transform .3s,background .2s,border-color .2s;
+}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--gold);color:var(--black);border-color:var(--gold)}
+.faq-a{
+  font-size:13px;color:var(--body);line-height:1.85;
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease,padding .3s;
+  font-weight:300;
+}
+.faq-item.open .faq-a{max-height:200px;padding-top:16px}
+
+/* ── CTA FINAL ── */
+.final-cta{text-align:center;position:relative;overflow:hidden}
+.final-cta::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(200,169,110,0.08) 0%,transparent 70%);
+  pointer-events:none;
+}
+.final-cta .section-title{color:var(--white);margin-bottom:16px}
+.final-cta .body-text{max-width:440px;margin:0 auto 40px;color:var(--body)}
+.final-price-row{
+  display:flex;align-items:baseline;justify-content:center;gap:14px;margin-bottom:36px;
+}
+.final-was{font-family:var(--serif);font-size:20px;color:rgba(255,255,255,0.15);text-decoration:line-through}
+.final-now{font-family:var(--serif);font-size:64px;color:var(--white);font-weight:400;line-height:1}
+.final-free{
+  font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  background:var(--gold);color:var(--black);padding:5px 12px;align-self:center;
+}
+.final-guarantees{display:flex;justify-content:center;flex-wrap:wrap;gap:24px;margin-top:28px}
+.final-g{font-size:11px;color:rgba(255,255,255,0.2);display:flex;align-items:center;gap:6px}
+.final-g svg{stroke:rgba(200,169,110,0.4);flex-shrink:0}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--off);
+  border-top:1px solid var(--border);
+  padding:32px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;
+}
+.foot-logo{font-family:var(--serif);font-size:16px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.2)}
+.foot-links{display:flex;gap:24px}
+.foot-links a{font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:1px;transition:color .2s}
+.foot-links a:hover{color:var(--gold)}
+.foot-copy{font-size:11px;color:rgba(255,255,255,0.1)}
+
+/* ── STICKY MOBILE ── */
+.sticky{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;
+  background:var(--gold);padding:14px 24px;
+  align-items:center;justify-content:space-between;
+  box-shadow:0 -8px 32px rgba(0,0,0,0.4);
+}
+.sticky-price{font-family:var(--serif);font-size:26px;color:var(--black);font-weight:400}
+.sticky-btn{
+  background:var(--black);color:var(--gold2);
+  font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  padding:12px 22px;border:none;cursor:pointer;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-content{padding:48px 28px;max-width:100%}
+  .founder-wrap{grid-template-columns:1fr;gap:40px}
+  .pack-grid{grid-template-columns:1fr}
+  .pack-total{flex-direction:column;align-items:flex-start;padding:28px}
+  .pack-total-right{align-items:flex-start;width:100%}
+  .pack-cta{width:100%;justify-content:center}
+  .benefits-grid{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .urgency-inner{grid-template-columns:1fr;gap:40px}
+  .strip-item{border-right:none;border-bottom:1px solid var(--border)}
+  .strip-item:last-child{border-bottom:none}
+  footer{flex-direction:column;text-align:center}
+  .foot-links{justify-content:center}
+  .sticky{display:flex}
+  body{padding-bottom:72px}
+}
+@media(max-width:600px){
+  .cd-num{font-size:40px;min-width:60px}
+  .hero-h1{font-size:38px}
+  .pack-total-price{font-size:52px}
+  .final-now{font-size:48px}
+}
+.hero-pack-cd{
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  margin-bottom:20px;
+  background:transparent;
+  padding:16px 0;;
+}
+.hero-pack-cd-block{text-align:center}
+.hero-pack-cd-num{font-family:var(--serif);font-size:36px;color:var(--gold2);font-weight:400;line-height:1;display:block}
+.hero-pack-cd-lbl{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);display:block;margin-top:4px}
+.hero-pack-cd-sep{font-family:var(--serif);font-size:28px;color:var(--gold);opacity:0.4;margin-bottom:14px}
+</style>
+</head>
+<body>
+
+<!-- ★ CONTENIDO — edita aquí ★ -->
+<script>
+const C = {
+  marca:          "Victoria Méndez",
+  url_tienda:     "https://victoriamendez.es",
+  url_compra:     "https://victoriamendez.es",  /* ← link de Shopify al pack */
+  email:          "unboxedbcn@gmail.com",
+
+  ann:            "✦ Pack Verano · Edición limitada",
+
+  hero_label:     "Edición limitada · Verano 2026",
+  hero_h1_1:      "Tu verano",
+  hero_h1_2:      "sin limites.",
+  hero_sub:       "Tres joyas de acero inoxidable. Diseñadas para el agua, el sol y cada momento que mereces recordar.",
+  hero_precio_was:"61,97€",
+  hero_precio_now:"59€",
+  hero_boton:     "Conseguir mi Pack",
+
+  fund_label:     "Creado por mujeres, para mujeres",
+  fund_h2_1:      "Una historia",
+  fund_h2_2:      "que conoces.",
+  fund_quote:     '"Sé lo que es querer lucir perfecta en verano y que tus joyas se estropeen al primer chapuzón. Por eso lo cambié todo."',
+  fund_p1:        "Más de diez años diseñando joyas para mujeres reales. Lo que más me pedíais era siempre lo mismo: bonitas, resistentes, para cada día.",
+  fund_p2:        "Este pack es mi respuesta. Tres piezas pensadas para vosotras, coordinadas y listas para brillar.",
+  fund_firma:     "Victoria Méndez",
+  video_label:    "Ver vídeo · 90 seg",
+  video_caption:  "\"Porque cada mujer merece joyas que estén a su altura.\"",
+
+  pack_label:     "El Pack Verano",
+  pack_h2_1:      "Tres piezas,",
+  pack_h2_2:      "un verano.",
+  pack_sub:       "Acero inoxidable 316L · Waterproof · Hipoalergénico",
+  piezas: [
+    { num:"01", emoji:"📿", nombre:"Collar Cascada", desc:"Fino y waterproof. Para la playa y para la cena.", antes:"24,99€" },
+    { num:"02", emoji:"✦",  nombre:"Pulsera Ibiza",  desc:"Ajustable. Resiste el mar, el cloro y la crema solar.",  antes:"19,99€" },
+    { num:"03", emoji:"💛", nombre:"Pendientes Sol", desc:"Hipoalergénicos. El punto final perfecto de cualquier look.", antes:"16,99€" },
+  ],
+  precio_was:    "61,97€",
+  precio_now:    "59€",
+  precio_badge:  "Ahorra 2,97€",
+  precio_sub:    "Envío gratuito · Pago seguro · 30 días para devolver",
+
+  ben_label:     "Por qué Victoria Méndez",
+  ben_h2_1:      "Joyas para vivir,",
+  ben_h2_2:      "no para guardar.",
+  bens:[
+    { t:"Waterproof real",      d:"Mar, piscina, ducha, gym. No se manchan, no se oxidan, no te fallan." },
+    { t:"Joyas que duran años",    d:"Joyas de acero 316L quirúrgico. El mismo material de la alta joyería." },
+    { t:"Diseño femenino",      d:"Cada pieza pensada por Victoria para mujeres reales y activas que no quieren que nada les pare." },
+    { t:"Set coordinado",       d:"Tres piezas que combinan entre sí. No tienes que pensar. Solo ponértelas." },
+    { t:"Packaging de regalo",  d:"Viene en estuche especial de edición limitada. Perfecto para ti o para regalar." },
+    { t:"Envío express",        d:"Pedido hoy, joyas mañana. Seguimiento en tiempo real." },
+  ],
+
+  rev_label:  "Clientas satisfechas",
+  rev_h2_1:   "Más de 4.800",
+  rev_h2_2:   "mujeres ya brillan.",
+  reviews:[
+    { t:'"No me lo quité en 15 días. Playa, piscina, cenas… Todo. Y sigue igual de brillante. Compraré más."', a:"Laura M. · Barcelona" },
+    { t:'"Pensé que sería bisutería normal. La calidad es increíble. El pack completo es un regalo para una misma."', a:"Sofía R. · Madrid" },
+    { t:'"Joyas para vivir, no para guardar en una caja. Las llevo cada día y recibo piropos continuamente."', a:"Ana G. · Valencia" },
+  ],
+
+  urg_label:  "Edición de temporada",
+  urg_h2_1:   "El verano es corto.",
+  urg_h2_2:   "Las joyas, para siempre.",
+  urg_sub:    "El Pack Verano es una edición especial. Cuando termine la temporada, no vuelve hasta el próximo año.",
+  stock:      "Solo 47 packs disponibles",
+  fecha_fin:  "2026-08-31T23:59:59",
+
+  faq_label:  "Preguntas frecuentes",
+  faq_h2_1:   "Todo lo que",
+  faq_h2_2:   "necesitas saber.",
+  faqs:[
+    { p:"¿Son realmente resistentes al agua?",   r:"Sí, 100%. Acero 316L bañado en oro. Mar, piscina, ducha y gym. No se manchan, no se oxidan." },
+    { p:"¿Cuándo llegará mi pedido?",            r:"Preparamos en 24h. Entrega en 24–48h laborables. Recibirás email con seguimiento." },
+    { p:"¿El baño de oro se deteriora?",         r:"Con uso normal dura años. Evita cremas antes de ponértelas. El mar no es problema." },
+    { p:"¿Puedo devolverlo?",                    r:"30 días desde la recepción. Devolución gratuita. Reembolso en 3–5 días hábiles." },
+    { p:"¿Viene en estuche para regalo?",        r:"Sí. Packaging especial de edición limitada. Añade nota en las notas del pedido." },
+    { p:"¿Hay pago a plazos?",                   r:"Sí, puedes pagar con Klarna en 3 cuotas sin intereses durante el proceso de compra." },
+  ],
+
+  cta_label:  "✦ Edición limitada · Verano 2026",
+  cta_h2_1:   "Tu mejor verano",
+  cta_h2_2:   "empieza hoy.",
+  cta_sub:    "Collar + Pulsera + Pendientes. Waterproof. Baño en oro. Listas para ti.",
+  cta_btn:    "Conseguir el Pack Verano",
+  garantias:  ["Pago seguro", "Envío 24–48h", "30 días devolución", "+10 años de trayectoria"],
+};
+</script>
+
+<!-- TRACKING -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Scroll depth
+  const ms={25:false,50:false,75:false,90:false};
+  window.addEventListener('scroll',()=>{
+    const p=Math.round(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100);
+    [25,50,75,90].forEach(m=>{if(!ms[m]&&p>=m){ms[m]=true;px('ScrollDepth',{scroll_percent:m})}});
+  },{passive:true});
+  // Tiempo
+  [30,60,120].forEach(s=>setTimeout(()=>px('TimeOnPage',{seconds:s}),s*1000));
+  // Exit
+  let ex=false;
+  document.addEventListener('mouseleave',e=>{if(e.clientY<50&&!ex){ex=true;px('ExitIntent',{})}});
+  // Sticky
+  const sticky=document.getElementById('sticky');
+  const heroCta=document.getElementById('hero-cta');
+  if(window.IntersectionObserver&&sticky&&heroCta){
+    new IntersectionObserver(e=>{sticky.style.display=e[0].isIntersecting?'none':'flex'},{threshold:0.1}).observe(heroCta);
+  }
+  // CTA clicks
+  document.querySelectorAll('.cta-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      if(typeof fbq!=='undefined'){
+        fbq('track','AddToCart',{content_ids:[TRACKING.pack_id],value:TRACKING.pack_precio,currency:TRACKING.pack_moneda,num_items:1});
+        fbq('track','InitiateCheckout',{content_ids:[TRACKING.pack_id],value:TRACKING.pack_precio,currency:TRACKING.pack_moneda});
+      }
+    });
+  });
+  function px(n,p){if(typeof fbq==='undefined')return;const s=['PageView','ViewContent','AddToCart','InitiateCheckout','Purchase','Lead'];try{s.includes(n)?fbq('track',n,p):fbq('trackCustom',n,p);}catch(e){}}
+  window.vmPurchase=(id,v)=>{if(typeof fbq!=='undefined')fbq('track','Purchase',{content_ids:[TRACKING.pack_id],value:v||TRACKING.pack_precio,currency:TRACKING.pack_moneda,order_id:id});};
+});
+</script>
+
+<!-- RENDER -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Ann
+  document.getElementById('ann').textContent = C.ann;
+  // Logo
+  const [w1,...wr]=C.marca.split(' ');
+  document.getElementById('logo').innerHTML=`${w1} <em>${wr.join(' ')}</em>`;
+  // Hero
+  document.getElementById('hero-label').textContent=C.hero_label;
+  document.getElementById('hero-h1').innerHTML=`${C.hero_h1_1}<br><em>${C.hero_h1_2}</em>`;
+  document.getElementById('hero-sub').textContent=C.hero_sub;
+  document.getElementById('hero-was').textContent='✦ Solo 47 packs disponibles';
+  document.getElementById('hero-now').innerHTML=`<sup>€</sup>${C.hero_precio_now.replace('€','')}`;
+  document.getElementById('hero-cta').textContent=C.hero_boton;
+  document.getElementById('hero-cta').href='#pack-section';
+  document.getElementById('hero-cta').className='hero-cta cta-btn';
+  // Fundadora
+  document.getElementById('fund-label').textContent=C.fund_label;
+  document.getElementById('fund-h2').innerHTML=`${C.fund_h2_1}<br><em>${C.fund_h2_2}</em>`;
+  document.getElementById('fund-quote').textContent=C.fund_quote;
+  document.getElementById('fund-p1').textContent=C.fund_p1;
+  document.getElementById('fund-p2').textContent=C.fund_p2;
+  document.getElementById('fund-firma').textContent=C.fund_firma;
+  document.getElementById('video-label').textContent=C.video_label;
+  document.getElementById('video-caption').textContent=C.video_caption;
+  // Pack
+  document.getElementById('pack-label').textContent=C.pack_label;
+  document.getElementById('pack-h2').innerHTML=`${C.pack_h2_1}<br><em>${C.pack_h2_2}</em>`;
+  document.getElementById('pack-sub').textContent=C.pack_sub;
+  const pg=document.getElementById('pack-grid');
+  C.piezas.forEach(p=>{pg.innerHTML+=`<div class="pack-card"><div class="pack-card-num">${p.num}</div><div class="pack-card-img">${p.emoji}</div><div class="pack-card-name">${p.nombre}</div><div class="pack-card-desc">${p.desc}</div><div class="pack-card-price">${p.antes}</div></div>`});
+  document.getElementById('precio-was').innerHTML=`Por separado: <span>${C.precio_was}</span>`;
+  document.getElementById('precio-now').innerHTML=`<sup>€</sup>${C.precio_now.replace('€','')}`;
+  document.getElementById('precio-badge').textContent=C.precio_badge;
+  document.getElementById('precio-sub').innerHTML=`<strong style="color:var(--gold)">${C.precio_badge}</strong> · ${C.precio_sub}`;
+  document.getElementById('pack-cta').textContent=C.hero_boton;
+  document.getElementById('pack-cta').href=C.url_compra;
+  // Beneficios
+  document.getElementById('ben-label').textContent=C.ben_label;
+  document.getElementById('ben-h2').innerHTML=`${C.ben_h2_1}<br><em>${C.ben_h2_2}</em>`;
+  const bg=document.getElementById('ben-grid');
+  const icons=['<path d="M12 2C6 8 4 12 4 15a8 8 0 0016 0c0-3-2-7-8-13z"/>','<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>','<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>','<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>','<path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>','<line x1="22" y1="12" x2="2" y2="12"/><path d="M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z"/>'];
+  C.bens.forEach((b,i)=>{bg.innerHTML+=`<div class="benefit"><svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${icons[i]}</svg><div class="benefit-title">${b.t}</div><div class="benefit-text">${b.d}</div></div>`});
+  // Reviews
+  document.getElementById('rev-label').textContent=C.rev_label;
+  document.getElementById('rev-h2').innerHTML=`${C.rev_h2_1}<br><em>${C.rev_h2_2}</em>`;
+  const rg=document.getElementById('reviews-grid');
+  C.reviews.forEach(r=>{rg.innerHTML+=`<div class="review"><div class="review-stars">★★★★★</div><p class="review-text">${r.t}</p><div class="review-author">${r.a}<span class="review-verified">✓ Verificada</span></div></div>`});
+  // Countdown hero pack
+  const finPack=new Date(C.fecha_fin);
+  function tickPack(){
+    const d=Math.max(0,finPack-new Date()),pad=n=>String(Math.floor(n)).padStart(2,'0');
+    document.getElementById('hcd-d').textContent=pad(d/86400000);
+    document.getElementById('hcd-h').textContent=pad((d%86400000)/3600000);
+    document.getElementById('hcd-m').textContent=pad((d%3600000)/60000);
+    document.getElementById('hcd-s').textContent=pad((d%60000)/1000);
+  }
+  tickPack();setInterval(tickPack,1000);
+
+  // FAQ
+  document.getElementById('faq-label').textContent=C.faq_label;
+  document.getElementById('faq-h2').innerHTML=`${C.faq_h2_1}<br><em>${C.faq_h2_2}</em>`;
+  const fw=document.getElementById('faq-wrap');
+  C.faqs.forEach(f=>{
+    const d=document.createElement('div');d.className='faq-item';
+    d.innerHTML=`<div class="faq-q"><span class="faq-q-text">${f.p}</span><span class="faq-icon">+</span></div><div class="faq-a">${f.r}</div>`;
+    d.onclick=()=>{const o=d.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!o)d.classList.add('open');};
+    fw.appendChild(d);
+  });
+  // Footer
+  document.getElementById('foot-logo').textContent=C.marca;
+  document.getElementById('foot-tienda').href=C.url_tienda;
+  document.getElementById('foot-mail').href='mailto:'+C.email;
+  document.getElementById('foot-copy').textContent='© 2026 '+C.marca;
+  // Sticky
+  document.getElementById('sticky-price').textContent=C.precio_now;
+  document.getElementById('sticky-cta').textContent='Conseguir el Pack →';
+  document.getElementById('sticky-cta').onclick=()=>document.getElementById('pack-section').scrollIntoView({behavior:'smooth'});
+});
+</script>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor">
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+</div>
+
+<!-- ANN -->
+<div class="ann" id="ann"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" id="logo"></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-visual">
+    <!-- VÍDEO DE FONDO -->
+    <div style="position:absolute;inset:0;overflow:hidden;z-index:0">
+      <video autoplay muted loop playsinline
+        style="position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;transform:translate(-50%,-50%);object-fit:cover;pointer-events:none">
+        <source src="OLAS.mp4" type="video/mp4">
+      </video>
+
+      <!-- Overlay -->
+      <div style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(4,12,20,0.72) 0%,rgba(4,12,20,0.42) 45%,rgba(4,12,20,0.18) 100%);z-index:1"></div>
+
+      <!-- Tono azul marino sutil -->
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(30,80,140,0.18) 0%,transparent 70%);z-index:2"></div>
+    </div>
+
+  </div>
+  <div class="hero-pack-image">
+    <div class="hero-pack-cd">
+      <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-d">00</span><span class="hero-pack-cd-lbl">días</span></div>
+      <span class="hero-pack-cd-sep">:</span>
+      <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-h">00</span><span class="hero-pack-cd-lbl">horas</span></div>
+      <span class="hero-pack-cd-sep">:</span>
+      <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-m">00</span><span class="hero-pack-cd-lbl">min</span></div>
+      <span class="hero-pack-cd-sep">:</span>
+      <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-s">00</span><span class="hero-pack-cd-lbl">seg</span></div>
+    </div>
+    <img src="pack-verano.jpg" alt="Pack Verano">
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow" style="opacity:0;animation:slideUp .7s .1s cubic-bezier(.16,1,.3,1) forwards" id="hero-label"></div>
+    <h1 class="hero-h1" id="hero-h1" style="opacity:0;animation:slideUp .9s .25s cubic-bezier(.16,1,.3,1) forwards"></h1>
+    <p class="hero-sub" id="hero-sub" style="opacity:0;animation:slideUp .8s .45s cubic-bezier(.16,1,.3,1) forwards"></p>
+    <div class="hero-price">
+      <div class="hero-price-was" id="hero-was"></div>
+      <div class="hero-price-now">
+        <span id="hero-now"></span>
+      </div>
+    </div>
+    <a class="hero-cta cta-btn" id="hero-cta">
+      <span></span>
+      <span class="hero-cta-arrow">→</span>
+    </a>
+    <div class="hero-trust">
+      <span class="trust-pill">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        4.8 / 5
+      </span>
+      <span class="trust-pill">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="13" height="13" rx="1"/><path d="M14 8h4l3 4v4h-7V8z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg>
+        Envío 24–48h
+      </span>
+      <span class="trust-pill">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
+        30 días devolución
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP MARQUEE -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <!-- Set 1 -->
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6 8 4 12 4 15a8 8 0 0016 0c0-3-2-7-8-13z"/></svg>Waterproof real</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Acero 316L quirúrgico</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Creado por mujeres</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Hipoalergénico</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="13" height="13" rx="1"/><path d="M14 8h4l3 4v4h-7V8z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg>Envío 24–48h</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>30 días devolución</div>
+    <!-- Set 2 — duplicado para el loop -->
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6 8 4 12 4 15a8 8 0 0016 0c0-3-2-7-8-13z"/></svg>Waterproof real</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Acero 316L quirúrgico</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Creado por mujeres</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Hipoalergénico</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="13" height="13" rx="1"/><path d="M14 8h4l3 4v4h-7V8z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg>Envío 24–48h</div>
+    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>30 días devolución</div>
+  </div>
+</div>
+
+<!-- FUNDADORA -->
+<section class="section dark">
+  <div class="wrap">
+    <div class="founder-wrap">
+      <div class="video-box" id="video-box" onclick="
+        if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:'Video Fundadora'});
+        const v=document.getElementById('founder-video');
+        const inner=document.getElementById('video-inner-placeholder');
+        if(v.paused){v.play();inner.style.display='none';v.style.display='block';}else{v.pause();inner.style.display='flex';v.style.display='none';}
+      " style="position:relative;overflow:hidden">
+        <video id="founder-video" src="victoria_hablando.mp4" style="display:none;width:100%;height:100%;object-fit:cover;position:absolute;inset:0"></video>
+        <div class="video-inner" id="video-inner-placeholder">
+          <div class="play-ring"><span>▶</span></div>
+          <div class="video-label" id="video-label"></div>
+        </div>
+        <div class="video-caption" id="video-caption"></div>
+      </div>
+      <div class="founder-text">
+        <span class="section-label" id="fund-label"></span>
+        <h2 class="section-title" id="fund-h2"></h2>
+        <blockquote class="founder-quote" id="fund-quote"></blockquote>
+        <p class="body-text" id="fund-p1" style="margin-bottom:12px"></p>
+        <p class="body-text" id="fund-p2"></p>
+        <div class="founder-sig" id="fund-firma"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACK -->
+<section class="section" id="pack-section" style="background:var(--black)">
+  <div class="wrap">
+    <div class="pack-header">
+      <span class="section-label" id="pack-label"></span>
+      <h2 class="section-title" id="pack-h2"></h2>
+      <p style="font-size:12px;color:var(--body);margin-top:12px;letter-spacing:1px;text-transform:uppercase" id="pack-sub"></p>
+    </div>
+    <div class="pack-grid" id="pack-grid"></div>
+    <div class="pack-total">
+      <div class="pack-total-left">
+        <div class="was" id="precio-was"></div>
+        <div class="pack-total-price" id="precio-now"></div>
+        <div class="pack-total-sub" id="precio-sub"></div>
+      </div>
+      <div class="pack-total-right">
+        <span class="pack-badge" id="precio-badge"></span>
+        <a class="pack-cta cta-btn" id="pack-cta">
+          Conseguir el Pack <span style="margin-left:8px">→</span>
+        </a>
+        <div class="stock-bar-wrap">
+          <div class="stock-bar-label">
+            <span>⬤ Stock disponible</span>
+            <span>47 / 200 packs</span>
+          </div>
+          <div class="stock-bar-track">
+            <div class="stock-bar-fill" id="stock-bar-fill"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="section sand">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:0">
+      <span class="section-label" id="ben-label"></span>
+      <h2 class="section-title dark-title" id="ben-h2"></h2>
+    </div>
+    <div class="benefits-grid" id="ben-grid"></div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" style="background:var(--black)">
+  <div class="wrap">
+    <div class="reviews-intro">
+      <div class="reviews-stars">★★★★★</div>
+      <div class="reviews-count">4.8 / 5 · Más de <span class="count-up" data-target="4800">0</span> clientas satisfechas</div>
+      <span class="section-label" style="margin-top:20px" id="rev-label"></span>
+      <h2 class="section-title" id="rev-h2"></h2>
+    </div>
+    <div class="reviews-grid" id="reviews-grid"></div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="section" style="background:var(--black)">
+  <div class="wrap">
+    <div style="text-align:center">
+      <span class="section-label" id="faq-label"></span>
+      <h2 class="section-title" id="faq-h2"></h2>
+    </div>
+    <div class="faq-wrap" id="faq-wrap"></div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section style="background:var(--off);padding:96px 0;position:relative;overflow:hidden;text-align:center">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(200,169,110,0.07) 0%,transparent 70%);pointer-events:none"></div>
+  <div class="wrap reveal">
+    <span style="display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px">✦ Edición limitada · Solo 47 packs · Verano 2026</span>
+    <h2 style="font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,64px);line-height:1.08;color:var(--white);margin-bottom:18px;letter-spacing:-0.3px">
+      Tu mejor verano<br><em style="font-style:italic;color:var(--gold2)">empieza hoy.</em>
+    </h2>
+    <p style="font-size:14px;line-height:1.85;color:var(--body);max-width:400px;margin:0 auto 40px;font-weight:300">
+      Collar + Pulsera + Pendientes. Waterproof. Baño en oro.<br>Cuando se acabe la temporada, no vuelve hasta el año que viene.
+    </p>
+    <div style="display:flex;align-items:baseline;justify-content:center;gap:16px;margin-bottom:36px">
+      <span style="font-family:var(--serif);font-size:22px;color:rgba(255,255,255,0.2);text-decoration:line-through">61,97€</span>
+      <span style="font-family:var(--serif);font-size:72px;color:var(--white);font-weight:400;line-height:1"><sup style="font-size:32px;vertical-align:super">€</sup>59</span>
+    </div>
+    <a href="https://victoriamendez.es" class="cta-btn" style="display:inline-flex;align-items:center;gap:12px;background:var(--white);color:var(--black);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:20px 48px;border:none;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s;margin-bottom:36px">
+      Conseguir el Pack Verano <span style="font-size:15px">→</span>
+    </a>
+    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:28px;margin-top:4px">
+      <span style="font-size:11px;color:rgba(255,255,255,0.25);display:flex;align-items:center;gap:7px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Pago 100% seguro
+      </span>
+      <span style="font-size:11px;color:rgba(255,255,255,0.25);display:flex;align-items:center;gap:7px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        Envío en 24–48h
+      </span>
+      <span style="font-size:11px;color:rgba(255,255,255,0.25);display:flex;align-items:center;gap:7px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        30 días devolución gratis
+      </span>
+      <span style="font-size:11px;color:rgba(255,255,255,0.25);display:flex;align-items:center;gap:7px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        +10 años de trayectoria
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="foot-logo" id="foot-logo"></span>
+  <div class="foot-links">
+    <a id="foot-tienda" href="#">Tienda oficial</a>
+    <a id="foot-mail" href="#">Contacto</a>
+    <a href="#">Devoluciones</a>
+  </div>
+  <span class="foot-copy" id="foot-copy"></span>
+</footer>
+
+<!-- STICKY MOBILE -->
+<div class="sticky" id="sticky">
+  <span class="sticky-price" id="sticky-price"></span>
+  <button class="sticky-btn" id="sticky-cta"></button>
+</div>
+
+<!-- CURSOR + ANIMACIONES MODERNAS -->
+<script>
+(function(){
+  // Cursor — solo aparece al mover el ratón
+  const cursor=document.getElementById('cursor');
+  const dot=document.getElementById('cursor-dot');
+  const ring=document.getElementById('cursor-ring');
+  if(!dot||!ring)return;
+  let mx=0,my=0,rx=0,ry=0,active=false;
+
+  document.addEventListener('mousemove',e=>{
+    mx=e.clientX;my=e.clientY;
+    dot.style.left=mx+'px';dot.style.top=my+'px';
+    if(!active){active=true;cursor.classList.add('active');}
+  });
+  function lerp(a,b,t){return a+(b-a)*t}
+  function animRing(){
+    rx=lerp(rx,mx,.1);ry=lerp(ry,my,.1);
+    ring.style.left=rx+'px';ring.style.top=ry+'px';
+    requestAnimationFrame(animRing);
+  }
+  animRing();
+
+  document.addEventListener('DOMContentLoaded',()=>{
+    // Ampliar cursor en interactivos
+    document.querySelectorAll('a,button,.pack-card,.faq-item').forEach(el=>{
+      el.addEventListener('mouseenter',()=>{ring.style.width='52px';ring.style.height='52px';ring.style.borderColor='var(--gold)';});
+      el.addEventListener('mouseleave',()=>{ring.style.width='';ring.style.height='';ring.style.borderColor='';});
+    });
+
+    // Barra de stock
+    setTimeout(()=>{const fill=document.getElementById('stock-bar-fill');if(fill)fill.style.width='23.5%';},800);
+
+    // Count-up
+    const countIO=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(!e.isIntersecting)return;
+        const el=e.target,target=+el.dataset.target,dur=2000,start=performance.now();
+        function step(now){const p=Math.min((now-start)/dur,1),ease=1-Math.pow(1-p,3);el.textContent=Math.round(ease*target).toLocaleString('es-ES');if(p<1)requestAnimationFrame(step);}
+        requestAnimationFrame(step);countIO.unobserve(el);
+      });
+    },{threshold:0.3});
+    document.querySelectorAll('.count-up').forEach(el=>countIO.observe(el));
+  });
+})();
+</script>
+
+<!-- Fix hero CTA text after render -->
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  const btn=document.getElementById('hero-cta');
+  if(btn){const spans=btn.querySelectorAll('span');if(spans[0])spans[0].textContent=C.hero_boton;}
+
+  // Scroll reveal — solo en elementos específicos, no en .section completo
+  setTimeout(()=>{
+    const targets=['.pack-header','.reviews-intro','.founder-wrap','.wrap.reveal'];
+    targets.forEach(sel=>document.querySelectorAll(sel).forEach(el=>el.classList.add('reveal')));
+    const io=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+    },{threshold:0.04});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible')),5000);
+  },100);
+
+  // Tilt effect — después de que las tarjetas estén renderizadas
+  setTimeout(()=>{
+    document.querySelectorAll('.pack-card').forEach(card=>{
+      const halo=document.createElement('div');halo.className='pack-card-halo';card.appendChild(halo);
+      card.addEventListener('mousemove',e=>{
+        const r=card.getBoundingClientRect();
+        const x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+        card.style.setProperty('--rx',((y-0.5)*-10)+'deg');
+        card.style.setProperty('--ry',((x-0.5)*10)+'deg');
+        card.style.setProperty('--mx',(x*100)+'%');
+        card.style.setProperty('--my',(y*100)+'%');
+      });
+      card.addEventListener('mouseleave',()=>{
+        card.style.setProperty('--rx','0deg');
+        card.style.setProperty('--ry','0deg');
+      });
+    });
+  },300);
+});
+</script>
+
+</body>
+</html>
