@@ -854,17 +854,19 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 
   </div>
-  <div class="hero-pack-image">
-    <div class="hero-pack-cd">
-      <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-d">00</span><span class="hero-pack-cd-lbl">días</span></div>
-      <span class="hero-pack-cd-sep">:</span>
-      <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-h">00</span><span class="hero-pack-cd-lbl">horas</span></div>
-      <span class="hero-pack-cd-sep">:</span>
-      <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-m">00</span><span class="hero-pack-cd-lbl">min</span></div>
-      <span class="hero-pack-cd-sep">:</span>
-      <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-s">00</span><span class="hero-pack-cd-lbl">seg</span></div>
+  <div class="hero-pack-image" style="display:flex;align-items:center;justify-content:center">
+    <div class="hero-pack-cd" style="flex-direction:column;gap:4px">
+      <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.55);text-align:center;margin-bottom:16px">Oferta termina en</div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-d" style="font-size:64px;color:#F5F0E8">00</span><span class="hero-pack-cd-lbl" style="color:rgba(245,240,232,0.5);font-size:10px">días</span></div>
+        <span class="hero-pack-cd-sep" style="font-size:48px;color:rgba(245,240,232,0.4)">:</span>
+        <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-h" style="font-size:64px;color:#F5F0E8">00</span><span class="hero-pack-cd-lbl" style="color:rgba(245,240,232,0.5);font-size:10px">horas</span></div>
+        <span class="hero-pack-cd-sep" style="font-size:48px;color:rgba(245,240,232,0.4)">:</span>
+        <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-m" style="font-size:64px;color:#F5F0E8">00</span><span class="hero-pack-cd-lbl" style="color:rgba(245,240,232,0.5);font-size:10px">min</span></div>
+        <span class="hero-pack-cd-sep" style="font-size:48px;color:rgba(245,240,232,0.4)">:</span>
+        <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-s" style="font-size:64px;color:#F5F0E8">00</span><span class="hero-pack-cd-lbl" style="color:rgba(245,240,232,0.5);font-size:10px">seg</span></div>
+      </div>
     </div>
-    <img src="pack-verano.jpg" alt="Pack Verano">
   </div>
   <div class="hero-content">
     <div class="hero-eyebrow" style="opacity:0;animation:slideUp .7s .1s cubic-bezier(.16,1,.3,1) forwards" id="hero-label"></div>
