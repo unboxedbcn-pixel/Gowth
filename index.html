@@ -211,11 +211,8 @@ nav{
 .trust-pill svg{stroke:var(--gold);opacity:0.7;flex-shrink:0}
 
 /* ── SCROLL REVEAL ── */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:.1s}
-.reveal-delay-2{transition-delay:.2s}
-.reveal-delay-3{transition-delay:.3s}
 
 /* ── STRIP MARQUEE ── */
 .strip{
@@ -1055,34 +1052,35 @@ document.addEventListener('DOMContentLoaded',()=>{
   const btn=document.getElementById('hero-cta');
   if(btn){const spans=btn.querySelectorAll('span');if(spans[0])spans[0].textContent=C.hero_boton;}
 
-  // Scroll reveal
-  const reveals=document.querySelectorAll('.section,.pack-header,.reviews-intro,.founder-wrap,.faq-wrap');
-  reveals.forEach(el=>el.classList.add('reveal'));
-  const io=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
-  },{threshold:0.05});
-  document.querySelectorAll('.reveal').forEach(el=>{io.observe(el);});
-  // Safety: reveal all after 6s in case IO misses
-  setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible')),6000);
+  // Scroll reveal — solo en elementos específicos, no en .section completo
+  setTimeout(()=>{
+    const targets=['.pack-header','.reviews-intro','.founder-wrap','.wrap.reveal'];
+    targets.forEach(sel=>document.querySelectorAll(sel).forEach(el=>el.classList.add('reveal')));
+    const io=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+    },{threshold:0.04});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible')),5000);
+  },100);
 
-  // Tilt effect on pack cards
-  document.querySelectorAll('.pack-card').forEach(card=>{
-    // add halo div
-    const halo=document.createElement('div');halo.className='pack-card-halo';card.appendChild(halo);
-    card.addEventListener('mousemove',e=>{
-      const r=card.getBoundingClientRect();
-      const x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
-      const rx=(y-0.5)*-10,ry=(x-0.5)*10;
-      card.style.setProperty('--rx',rx+'deg');
-      card.style.setProperty('--ry',ry+'deg');
-      card.style.setProperty('--mx',(x*100)+'%');
-      card.style.setProperty('--my',(y*100)+'%');
+  // Tilt effect — después de que las tarjetas estén renderizadas
+  setTimeout(()=>{
+    document.querySelectorAll('.pack-card').forEach(card=>{
+      const halo=document.createElement('div');halo.className='pack-card-halo';card.appendChild(halo);
+      card.addEventListener('mousemove',e=>{
+        const r=card.getBoundingClientRect();
+        const x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+        card.style.setProperty('--rx',((y-0.5)*-10)+'deg');
+        card.style.setProperty('--ry',((x-0.5)*10)+'deg');
+        card.style.setProperty('--mx',(x*100)+'%');
+        card.style.setProperty('--my',(y*100)+'%');
+      });
+      card.addEventListener('mouseleave',()=>{
+        card.style.setProperty('--rx','0deg');
+        card.style.setProperty('--ry','0deg');
+      });
     });
-    card.addEventListener('mouseleave',()=>{
-      card.style.setProperty('--rx','0deg');
-      card.style.setProperty('--ry','0deg');
-    });
-  });
+  },300);
 });
 </script>
 
