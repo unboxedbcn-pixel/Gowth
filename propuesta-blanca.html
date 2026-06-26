@@ -17,7 +17,7 @@
 const TRACKING = {
   meta_pixel_id: "TU_PIXEL_ID_AQUI",   // ← reemplaza con tu ID de Meta Pixel
   pack_nombre:   "Pack Verano 2026",
-  pack_precio:   60,
+  pack_precio:   59,
   pack_moneda:   "EUR",
   pack_id:       "PACK-VERANO-2026",
 };
@@ -48,19 +48,19 @@ if (TRACKING.meta_pixel_id !== 'TU_PIXEL_ID_AQUI') {
 </noscript>
 
 <style>
-/* ── TOKENS ── */
+/* ── TOKENS — PROPUESTA BLANCA ── */
 :root {
-  --black:   #080808;
-  --off:     #0F0F0F;
-  --mid:     #181818;
-  --sand:    #F7F2EA;
-  --sand2:   #EEE8DB;
-  --white:   #FFFFFF;
-  --gold:    #D4A853;
-  --gold2:   #EDD077;
-  --gold3:   #A07828;
-  --body:    #A09890;
-  --border:  rgba(212,168,83,0.22);
+  --black:   #F5F0E8;
+  --off:     #EDE8DF;
+  --mid:     #E4DDD2;
+  --sand:    #1A1510;
+  --sand2:   #2A231A;
+  --white:   #1A1510;
+  --gold:    #B8912E;
+  --gold2:   #B8912E;
+  --gold3:   #B8912E;
+  --body:    #6B5F4A;
+  --border:  rgba(184,145,46,0.22);
   --serif:   'Playfair Display', Georgia, serif;
   --sans:    'Inter', system-ui, sans-serif;
 }
@@ -89,12 +89,12 @@ a{text-decoration:none;color:inherit}
 .wrap{max-width:1080px;margin:0 auto;padding:0 32px}
 
 /* ── ANNOUNCEMENT ── */
-.ann{background:var(--gold);color:var(--black);text-align:center;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:11px 16px}
+.ann{background:var(--gold);color:#1A1510;text-align:center;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:11px 16px}
 
 /* ── NAV ── */
 nav{
   position:sticky;top:0;z-index:100;
-  background:rgba(10,10,10,0.92);
+  background:rgba(245,240,232,0.92);
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
@@ -105,6 +105,12 @@ nav{
   font-family:var(--serif);font-size:20px;font-weight:400;
   letter-spacing:5px;text-transform:uppercase;color:var(--white);
 }
+/* propuesta blanca overrides */
+.section-title{color:var(--white)}
+.pack-card-name{color:var(--white)}
+.review-text{color:rgba(26,21,16,0.8)}
+.review{background:var(--mid);border-color:var(--border)}
+.review:hover{border-color:rgba(140,106,40,0.35)}
 .nav-logo em{font-style:italic;color:var(--gold)}
 
 /* ── HERO ── */
@@ -139,7 +145,7 @@ nav{
 }
 .hero-img-placeholder span{
   font-size:11px;letter-spacing:2px;text-transform:uppercase;
-  color:rgba(255,255,255,0.2);text-align:center;padding:0 20px;
+  color:rgba(26,21,16,0.35);text-align:center;padding:0 20px;
 }
 .hero-img-tag{
   position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
@@ -149,7 +155,7 @@ nav{
   display:flex;align-items:center;gap:10px;
 }
 .hero-img-tag-price{font-family:var(--serif);font-size:22px;color:var(--gold2);font-weight:400}
-.hero-img-tag-label{font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:1.5px;text-transform:uppercase}
+.hero-img-tag-label{font-size:10px;color:rgba(26,21,16,0.5);letter-spacing:1.5px;text-transform:uppercase}
 
 /* RIGHT — contenido */
 .hero-content{
@@ -219,7 +225,7 @@ nav{
 }
 .trust-pill{
   display:inline-flex;align-items:center;gap:6px;
-  font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.3px;
+  font-size:11px;color:rgba(26,21,16,0.45);letter-spacing:0.3px;
 }
 .trust-pill svg{stroke:var(--gold);opacity:0.7;flex-shrink:0}
 
@@ -229,24 +235,20 @@ nav{
 
 /* ── STRIP MARQUEE ── */
 .strip{
-  background:var(--mid);
-  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  padding:14px 0;overflow:hidden;
+  background:#DDD6C8;
+  border-top:1px solid rgba(140,106,40,0.2);border-bottom:1px solid rgba(140,106,40,0.2);
+  padding:14px 0;
 }
 .strip-track{
-  display:flex;align-items:center;gap:0;
-  animation:marquee 22s linear infinite;
-  width:max-content;
+  display:flex;align-items:center;justify-content:center;flex-wrap:nowrap;gap:0;
 }
-.strip:hover .strip-track{animation-play-state:paused}
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .strip-item{
   display:flex;align-items:center;gap:9px;
-  padding:8px 40px;border-right:1px solid var(--border);
+  padding:8px 40px;border-right:1px solid rgba(140,106,40,0.25);
   font-size:11px;letter-spacing:1px;text-transform:uppercase;
-  color:rgba(255,255,255,0.4);white-space:nowrap;
+  color:#4A3E2C;white-space:nowrap;font-weight:500;
 }
-.strip-item svg{stroke:var(--gold);opacity:0.8}
+.strip-item svg{stroke:#4A3E2C;opacity:0.7}
 
 /* ── TILT CARDS (signature effect) ── */
 .pack-card{transform-style:preserve-3d;will-change:transform}
@@ -312,19 +314,19 @@ nav{
 }
 .play-ring span{position:relative;z-index:2;font-size:16px;color:var(--black);margin-left:3px}
 .video-box:hover .play-ring{transform:scale(1.08);border-color:var(--gold)}
-.video-label{position:relative;z-index:2;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3)}
+.video-label{position:relative;z-index:2;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(26,21,16,0.45)}
 .video-caption{
   position:absolute;bottom:0;left:0;right:0;z-index:3;
   padding:20px 24px;
   background:linear-gradient(to top,rgba(10,10,10,0.9),transparent);
-  font-family:var(--serif);font-style:italic;font-size:13px;color:rgba(255,255,255,0.5);
+  font-family:var(--serif);font-style:italic;font-size:13px;color:rgba(26,21,16,0.6);
 }
 
 /* Texto fundadora */
 .founder-text{padding-top:8px}
 .founder-quote{
   font-family:var(--serif);font-style:italic;
-  font-size:20px;line-height:1.65;color:rgba(255,255,255,0.85);
+  font-size:20px;line-height:1.65;color:rgba(26,21,16,0.85);
   border-left:1px solid var(--gold);padding-left:22px;
   margin:28px 0;
 }
@@ -367,7 +369,7 @@ nav{
   color:var(--white);margin-bottom:8px;
 }
 .pack-card-desc{font-size:12px;line-height:1.7;color:var(--body);margin-bottom:16px;font-weight:300}
-.pack-card-price{font-size:12px;color:rgba(255,255,255,0.2);text-decoration:line-through}
+.pack-card-price{font-size:12px;color:rgba(26,21,16,0.35);text-decoration:line-through}
 
 /* Precio total */
 .pack-total{
@@ -375,7 +377,7 @@ nav{
   padding:40px 48px;
   display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;
 }
-.pack-total-left .was{font-size:12px;color:rgba(255,255,255,0.2);margin-bottom:6px}
+.pack-total-left .was{font-size:12px;color:rgba(26,21,16,0.35);margin-bottom:6px}
 .pack-total-left .was span{text-decoration:line-through}
 .pack-total-price{
   font-family:var(--serif);font-size:72px;color:var(--white);font-weight:400;line-height:1;
@@ -437,7 +439,7 @@ nav{
 .review-stars{color:var(--gold);font-size:12px;letter-spacing:3px;margin-bottom:16px}
 .review-text{
   font-family:var(--serif);font-style:italic;
-  font-size:15px;line-height:1.75;color:rgba(255,255,255,0.75);
+  font-size:15px;line-height:1.75;color:rgba(26,21,16,0.75);
   margin-bottom:20px;
 }
 .review-author{
@@ -483,7 +485,7 @@ nav{
 .faq-q{display:flex;justify-content:space-between;align-items:center;gap:20px}
 .faq-q-text{
   font-family:var(--serif);font-size:17px;font-weight:400;
-  color:rgba(255,255,255,0.8);transition:color .2s;
+  color:rgba(26,21,16,0.8);transition:color .2s;
 }
 .faq-item:hover .faq-q-text{color:var(--white)}
 .faq-icon{
@@ -514,14 +516,14 @@ nav{
 .final-price-row{
   display:flex;align-items:baseline;justify-content:center;gap:14px;margin-bottom:36px;
 }
-.final-was{font-family:var(--serif);font-size:20px;color:rgba(255,255,255,0.15);text-decoration:line-through}
+.final-was{font-family:var(--serif);font-size:20px;color:rgba(26,21,16,0.25);text-decoration:line-through}
 .final-now{font-family:var(--serif);font-size:64px;color:var(--white);font-weight:400;line-height:1}
 .final-free{
   font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
   background:var(--gold);color:var(--black);padding:5px 12px;align-self:center;
 }
 .final-guarantees{display:flex;justify-content:center;flex-wrap:wrap;gap:24px;margin-top:28px}
-.final-g{font-size:11px;color:rgba(255,255,255,0.2);display:flex;align-items:center;gap:6px}
+.final-g{font-size:11px;color:rgba(26,21,16,0.35);display:flex;align-items:center;gap:6px}
 .final-g svg{stroke:rgba(200,169,110,0.4);flex-shrink:0}
 
 /* ── FOOTER ── */
@@ -532,11 +534,11 @@ footer{
   display:flex;align-items:center;justify-content:space-between;
   flex-wrap:wrap;gap:16px;
 }
-.foot-logo{font-family:var(--serif);font-size:16px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.2)}
+.foot-logo{font-family:var(--serif);font-size:16px;letter-spacing:3px;text-transform:uppercase;color:rgba(26,21,16,0.35)}
 .foot-links{display:flex;gap:24px}
-.foot-links a{font-size:11px;color:rgba(255,255,255,0.2);letter-spacing:1px;transition:color .2s}
+.foot-links a{font-size:11px;color:rgba(26,21,16,0.35);letter-spacing:1px;transition:color .2s}
 .foot-links a:hover{color:var(--gold)}
-.foot-copy{font-size:11px;color:rgba(255,255,255,0.1)}
+.foot-copy{font-size:11px;color:rgba(26,21,16,0.25)}
 
 /* ── STICKY MOBILE ── */
 .sticky{
@@ -584,7 +586,7 @@ footer{
 }
 .hero-pack-cd-block{text-align:center}
 .hero-pack-cd-num{font-family:var(--serif);font-size:36px;color:var(--gold2);font-weight:400;line-height:1;display:block}
-.hero-pack-cd-lbl{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);display:block;margin-top:4px}
+.hero-pack-cd-lbl{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(26,21,16,0.45);display:block;margin-top:4px}
 .hero-pack-cd-sep{font-family:var(--serif);font-size:28px;color:var(--gold);opacity:0.4;margin-bottom:14px}
 </style>
 </head>
@@ -605,7 +607,7 @@ const C = {
   hero_h1_2:      "sin limites.",
   hero_sub:       "Tres joyas de acero inoxidable. Diseñadas para el agua, el sol y cada momento que mereces recordar.",
   hero_precio_was:"61,97€",
-  hero_precio_now:"60€",
+  hero_precio_now:"59€",
   hero_boton:     "Conseguir mi Pack",
 
   fund_label:     "Creado por mujeres, para mujeres",
@@ -628,7 +630,7 @@ const C = {
     { num:"03", emoji:"💛", nombre:"Pendientes Sol", desc:"Hipoalergénicos. El punto final perfecto de cualquier look.", antes:"16,99€" },
   ],
   precio_was:    "61,97€",
-  precio_now:    "60€",
+  precio_now:    "59€",
   precio_badge:  "Ahorra 2,97€",
   precio_sub:    "Envío gratuito · Pago seguro · 30 días para devolver",
 
@@ -797,6 +799,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+</div>
 
 <!-- ANN -->
 <div class="ann" id="ann"></div>
@@ -816,25 +819,27 @@ document.addEventListener('DOMContentLoaded', () => {
         <source src="OLAS.mp4" type="video/mp4">
       </video>
 
-      <!-- Overlay -->
-      <div style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(4,12,20,0.72) 0%,rgba(4,12,20,0.42) 45%,rgba(4,12,20,0.18) 100%);z-index:1"></div>
+      <!-- Overlay claro -->
+      <div style="position:absolute;inset:0;background:linear-gradient(120deg,rgba(245,240,232,0.65) 0%,rgba(245,240,232,0.35) 45%,rgba(245,240,232,0.10) 100%);z-index:1"></div>
 
-      <!-- Tono azul marino sutil -->
-      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(30,80,140,0.18) 0%,transparent 70%);z-index:2"></div>
+      <!-- Tono dorado sutil -->
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(180,140,40,0.08) 0%,transparent 70%);z-index:2"></div>
     </div>
 
   </div>
-  <div class="hero-pack-image">
-    <div class="hero-pack-cd">
-      <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-d">00</span><span class="hero-pack-cd-lbl">días</span></div>
-      <span class="hero-pack-cd-sep">:</span>
-      <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-h">00</span><span class="hero-pack-cd-lbl">horas</span></div>
-      <span class="hero-pack-cd-sep">:</span>
-      <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-m">00</span><span class="hero-pack-cd-lbl">min</span></div>
-      <span class="hero-pack-cd-sep">:</span>
-      <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-s">00</span><span class="hero-pack-cd-lbl">seg</span></div>
+  <div class="hero-pack-image" style="display:flex;align-items:center;justify-content:center">
+    <div class="hero-pack-cd" style="flex-direction:column;gap:4px">
+      <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(26,21,16,0.6);text-align:center;margin-bottom:16px">Oferta termina en</div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-d" style="font-size:64px;color:#F5F0E8">00</span><span class="hero-pack-cd-lbl" style="color:rgba(26,21,16,0.5);font-size:10px">días</span></div>
+        <span class="hero-pack-cd-sep" style="font-size:48px;color:rgba(245,240,232,0.4)">:</span>
+        <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-h" style="font-size:64px;color:#F5F0E8">00</span><span class="hero-pack-cd-lbl" style="color:rgba(26,21,16,0.5);font-size:10px">horas</span></div>
+        <span class="hero-pack-cd-sep" style="font-size:48px;color:rgba(245,240,232,0.4)">:</span>
+        <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-m" style="font-size:64px;color:#F5F0E8">00</span><span class="hero-pack-cd-lbl" style="color:rgba(26,21,16,0.5);font-size:10px">min</span></div>
+        <span class="hero-pack-cd-sep" style="font-size:48px;color:rgba(245,240,232,0.4)">:</span>
+        <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-s" style="font-size:64px;color:#F5F0E8">00</span><span class="hero-pack-cd-lbl" style="color:rgba(26,21,16,0.5);font-size:10px">seg</span></div>
+      </div>
     </div>
-    <img src="pack-verano.png" alt="Pack Verano">
   </div>
   <div class="hero-content">
     <div class="hero-eyebrow" style="opacity:0;animation:slideUp .7s .1s cubic-bezier(.16,1,.3,1) forwards" id="hero-label"></div>
@@ -846,7 +851,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <span id="hero-now"></span>
       </div>
     </div>
-    <a class="hero-cta cta-btn" id="hero-cta" href="#pack-section">
+    <a class="hero-cta cta-btn" id="hero-cta">
       <span></span>
       <span class="hero-cta-arrow">→</span>
     </a>
@@ -875,14 +880,6 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Acero 316L quirúrgico</div>
     <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Creado por mujeres</div>
     <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Hipoalergénico</div>
-    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="13" height="13" rx="1"/><path d="M14 8h4l3 4v4h-7V8z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg>Envío 24–48h</div>
-    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>30 días devolución</div>
-    <!-- Set 2 — duplicado para el loop -->
-    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6 8 4 12 4 15a8 8 0 0016 0c0-3-2-7-8-13z"/></svg>Waterproof real</div>
-    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Acero 316L quirúrgico</div>
-    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>Creado por mujeres</div>
-    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Hipoalergénico</div>
-    <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="13" height="13" rx="1"/><path d="M14 8h4l3 4v4h-7V8z"/><circle cx="5.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/></svg>Envío 24–48h</div>
     <div class="strip-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>30 días devolución</div>
   </div>
 </div>
@@ -987,38 +984,38 @@ document.addEventListener('DOMContentLoaded', () => {
 </section>
 
 <!-- CTA FINAL -->
-<section style="background:var(--off);padding:96px 0;position:relative;overflow:hidden;text-align:center">
+<section style="background:#1A1510;padding:96px 0;position:relative;overflow:hidden;text-align:center">
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(200,169,110,0.07) 0%,transparent 70%);pointer-events:none"></div>
   <div class="wrap reveal">
-    <span style="display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px">✦ Edición limitada · Solo 47 packs · Verano 2026</span>
-    <h2 style="font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,64px);line-height:1.08;color:var(--white);margin-bottom:18px;letter-spacing:-0.3px">
-      Tu mejor verano<br><em style="font-style:italic;color:var(--gold2)">empieza hoy.</em>
+    <span style="display:block;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#F5F0E8;opacity:0.6;margin-bottom:18px">✦ Edición limitada · Solo 47 packs · Verano 2026</span>
+    <h2 style="font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,64px);line-height:1.08;color:#F5F0E8;margin-bottom:18px;letter-spacing:-0.3px">
+      Tu mejor verano<br><em style="font-style:italic;color:var(--gold)">empieza hoy.</em>
     </h2>
-    <p style="font-size:14px;line-height:1.85;color:var(--body);max-width:400px;margin:0 auto 40px;font-weight:300">
+    <p style="font-size:14px;line-height:1.85;color:rgba(245,240,232,0.6);max-width:400px;margin:0 auto 40px;font-weight:300">
       Collar + Pulsera + Pendientes. Waterproof. Baño en oro.<br>Cuando se acabe la temporada, no vuelve hasta el año que viene.
     </p>
     <div style="display:flex;align-items:baseline;justify-content:center;gap:16px;margin-bottom:36px">
-      <span style="font-family:var(--serif);font-size:22px;color:rgba(255,255,255,0.2);text-decoration:line-through">61,97€</span>
-      <span style="font-family:var(--serif);font-size:72px;color:var(--white);font-weight:400;line-height:1"><sup style="font-size:32px;vertical-align:super">€</sup>60</span>
+      <span style="font-family:var(--serif);font-size:22px;color:rgba(245,240,232,0.25);text-decoration:line-through">61,97€</span>
+      <span style="font-family:var(--serif);font-size:72px;color:#F5F0E8;font-weight:400;line-height:1"><sup style="font-size:32px;vertical-align:super">€</sup>59</span>
     </div>
-    <a href="https://victoriamendez.es" class="cta-btn" style="display:inline-flex;align-items:center;gap:12px;background:var(--white);color:var(--black);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:20px 48px;border:none;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s;margin-bottom:36px">
+    <a href="https://victoriamendez.es" class="cta-btn" style="display:inline-flex;align-items:center;gap:12px;background:#F5F0E8;color:#1A1510;font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:20px 48px;border:none;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s;margin-bottom:36px">
       Conseguir el Pack Verano <span style="font-size:15px">→</span>
     </a>
     <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:28px;margin-top:4px">
-      <span style="font-size:11px;color:rgba(255,255,255,0.25);display:flex;align-items:center;gap:7px">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <span style="font-size:11px;color:rgba(245,240,232,0.7);display:flex;align-items:center;gap:7px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         Pago 100% seguro
       </span>
-      <span style="font-size:11px;color:rgba(255,255,255,0.25);display:flex;align-items:center;gap:7px">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <span style="font-size:11px;color:rgba(245,240,232,0.7);display:flex;align-items:center;gap:7px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         Envío en 24–48h
       </span>
-      <span style="font-size:11px;color:rgba(255,255,255,0.25);display:flex;align-items:center;gap:7px">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <span style="font-size:11px;color:rgba(245,240,232,0.7);display:flex;align-items:center;gap:7px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         30 días devolución gratis
       </span>
-      <span style="font-size:11px;color:rgba(255,255,255,0.25);display:flex;align-items:center;gap:7px">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <span style="font-size:11px;color:rgba(245,240,232,0.7);display:flex;align-items:center;gap:7px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,232,0.5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         +10 años de trayectoria
       </span>
     </div>

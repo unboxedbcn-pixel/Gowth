@@ -17,7 +17,7 @@
 const TRACKING = {
   meta_pixel_id: "TU_PIXEL_ID_AQUI",   // ← reemplaza con tu ID de Meta Pixel
   pack_nombre:   "Pack Verano 2026",
-  pack_precio:   60,
+  pack_precio:   59,
   pack_moneda:   "EUR",
   pack_id:       "PACK-VERANO-2026",
 };
@@ -68,10 +68,29 @@ if (TRACKING.meta_pixel_id !== 'TU_PIXEL_ID_AQUI') {
 /* ── RESET ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--black);color:var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:var(--sans);background:var(--black);color:var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden;cursor:none}
 img{display:block;max-width:100%;loading:lazy}
 a{text-decoration:none;color:inherit}
 
+/* ── CURSOR PERSONALIZADO ── */
+.cursor{
+  position:fixed;top:-100px;left:-100px;pointer-events:none;z-index:9999;
+  opacity:0;transition:opacity .3s;
+}
+.cursor.active{opacity:1}
+.cursor-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--gold);
+  position:absolute;
+  transform:translate(-50%,-50%);
+}
+.cursor-ring{
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid rgba(200,169,110,0.45);
+  position:absolute;
+  transform:translate(-50%,-50%);
+}
+@media(hover:none){.cursor{display:none}body{cursor:auto}}
 
 /* ── HERO TEXT REVEAL ── */
 @keyframes slideUp{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
@@ -605,7 +624,7 @@ const C = {
   hero_h1_2:      "sin limites.",
   hero_sub:       "Tres joyas de acero inoxidable. Diseñadas para el agua, el sol y cada momento que mereces recordar.",
   hero_precio_was:"61,97€",
-  hero_precio_now:"60€",
+  hero_precio_now:"59€",
   hero_boton:     "Conseguir mi Pack",
 
   fund_label:     "Creado por mujeres, para mujeres",
@@ -628,7 +647,7 @@ const C = {
     { num:"03", emoji:"💛", nombre:"Pendientes Sol", desc:"Hipoalergénicos. El punto final perfecto de cualquier look.", antes:"16,99€" },
   ],
   precio_was:    "61,97€",
-  precio_now:    "60€",
+  precio_now:    "59€",
   precio_badge:  "Ahorra 2,97€",
   precio_sub:    "Envío gratuito · Pago seguro · 30 días para devolver",
 
@@ -797,6 +816,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<!-- CURSOR -->
+<div class="cursor" id="cursor">
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+</div>
 
 <!-- ANN -->
 <div class="ann" id="ann"></div>
@@ -834,7 +858,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <span class="hero-pack-cd-sep">:</span>
       <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-s">00</span><span class="hero-pack-cd-lbl">seg</span></div>
     </div>
-    <img src="pack-verano.png" alt="Pack Verano">
+    <img src="pack-verano.jpg" alt="Pack Verano">
   </div>
   <div class="hero-content">
     <div class="hero-eyebrow" style="opacity:0;animation:slideUp .7s .1s cubic-bezier(.16,1,.3,1) forwards" id="hero-label"></div>
@@ -846,7 +870,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <span id="hero-now"></span>
       </div>
     </div>
-    <a class="hero-cta cta-btn" id="hero-cta" href="#pack-section">
+    <a class="hero-cta cta-btn" id="hero-cta">
       <span></span>
       <span class="hero-cta-arrow">→</span>
     </a>
@@ -999,7 +1023,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </p>
     <div style="display:flex;align-items:baseline;justify-content:center;gap:16px;margin-bottom:36px">
       <span style="font-family:var(--serif);font-size:22px;color:rgba(255,255,255,0.2);text-decoration:line-through">61,97€</span>
-      <span style="font-family:var(--serif);font-size:72px;color:var(--white);font-weight:400;line-height:1"><sup style="font-size:32px;vertical-align:super">€</sup>60</span>
+      <span style="font-family:var(--serif);font-size:72px;color:var(--white);font-weight:400;line-height:1"><sup style="font-size:32px;vertical-align:super">€</sup>59</span>
     </div>
     <a href="https://victoriamendez.es" class="cta-btn" style="display:inline-flex;align-items:center;gap:12px;background:var(--white);color:var(--black);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:20px 48px;border:none;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s;margin-bottom:36px">
       Conseguir el Pack Verano <span style="font-size:15px">→</span>
@@ -1042,10 +1066,36 @@ document.addEventListener('DOMContentLoaded', () => {
   <button class="sticky-btn" id="sticky-cta"></button>
 </div>
 
-<!-- ANIMACIONES MODERNAS -->
+<!-- CURSOR + ANIMACIONES MODERNAS -->
 <script>
 (function(){
+  // Cursor — solo aparece al mover el ratón
+  const cursor=document.getElementById('cursor');
+  const dot=document.getElementById('cursor-dot');
+  const ring=document.getElementById('cursor-ring');
+  if(!dot||!ring)return;
+  let mx=0,my=0,rx=0,ry=0,active=false;
+
+  document.addEventListener('mousemove',e=>{
+    mx=e.clientX;my=e.clientY;
+    dot.style.left=mx+'px';dot.style.top=my+'px';
+    if(!active){active=true;cursor.classList.add('active');}
+  });
+  function lerp(a,b,t){return a+(b-a)*t}
+  function animRing(){
+    rx=lerp(rx,mx,.1);ry=lerp(ry,my,.1);
+    ring.style.left=rx+'px';ring.style.top=ry+'px';
+    requestAnimationFrame(animRing);
+  }
+  animRing();
+
   document.addEventListener('DOMContentLoaded',()=>{
+    // Ampliar cursor en interactivos
+    document.querySelectorAll('a,button,.pack-card,.faq-item').forEach(el=>{
+      el.addEventListener('mouseenter',()=>{ring.style.width='52px';ring.style.height='52px';ring.style.borderColor='var(--gold)';});
+      el.addEventListener('mouseleave',()=>{ring.style.width='';ring.style.height='';ring.style.borderColor='';});
+    });
+
     // Barra de stock
     setTimeout(()=>{const fill=document.getElementById('stock-bar-fill');if(fill)fill.style.width='23.5%';},800);
 

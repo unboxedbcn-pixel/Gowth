@@ -17,7 +17,7 @@
 const TRACKING = {
   meta_pixel_id: "TU_PIXEL_ID_AQUI",   // ← reemplaza con tu ID de Meta Pixel
   pack_nombre:   "Pack Verano 2026",
-  pack_precio:   60,
+  pack_precio:   59,
   pack_moneda:   "EUR",
   pack_id:       "PACK-VERANO-2026",
 };
@@ -50,17 +50,17 @@ if (TRACKING.meta_pixel_id !== 'TU_PIXEL_ID_AQUI') {
 <style>
 /* ── TOKENS ── */
 :root {
-  --black:   #080808;
-  --off:     #0F0F0F;
-  --mid:     #181818;
-  --sand:    #F7F2EA;
-  --sand2:   #EEE8DB;
+  --black:   #0A0A0A;
+  --off:     #111111;
+  --mid:     #1E1E1E;
+  --sand:    #F5F0E8;
+  --sand2:   #EDE7DA;
   --white:   #FFFFFF;
-  --gold:    #D4A853;
-  --gold2:   #EDD077;
-  --gold3:   #A07828;
-  --body:    #A09890;
-  --border:  rgba(212,168,83,0.22);
+  --gold:    #C8A96E;
+  --gold2:   #E2C98A;
+  --gold3:   #8C6A2F;
+  --body:    #888078;
+  --border:  rgba(200,169,110,0.18);
   --serif:   'Playfair Display', Georgia, serif;
   --sans:    'Inter', system-ui, sans-serif;
 }
@@ -69,21 +69,8 @@ if (TRACKING.meta_pixel_id !== 'TU_PIXEL_ID_AQUI') {
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--black);color:var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{display:block;max-width:100%;loading:lazy}
+img{display:block;max-width:100%}
 a{text-decoration:none;color:inherit}
-
-
-/* ── HERO TEXT REVEAL ── */
-@keyframes slideUp{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
-
-/* ── STOCK BAR ── */
-.stock-bar-wrap{margin-top:12px}
-.stock-bar-label{display:flex;justify-content:space-between;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.stock-bar-track{height:2px;background:rgba(200,169,110,0.12);border-radius:1px;overflow:hidden}
-.stock-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold3),var(--gold));border-radius:1px;width:0;transition:width 1.4s cubic-bezier(.16,1,.3,1)}
-
-/* ── COUNT UP ── */
-.count-up{display:inline-block}
 
 /* ── LAYOUT ── */
 .wrap{max-width:1080px;margin:0 auto;padding:0 32px}
@@ -605,7 +592,7 @@ const C = {
   hero_h1_2:      "sin limites.",
   hero_sub:       "Tres joyas de acero inoxidable. Diseñadas para el agua, el sol y cada momento que mereces recordar.",
   hero_precio_was:"61,97€",
-  hero_precio_now:"60€",
+  hero_precio_now:"59€",
   hero_boton:     "Conseguir mi Pack",
 
   fund_label:     "Creado por mujeres, para mujeres",
@@ -628,7 +615,7 @@ const C = {
     { num:"03", emoji:"💛", nombre:"Pendientes Sol", desc:"Hipoalergénicos. El punto final perfecto de cualquier look.", antes:"16,99€" },
   ],
   precio_was:    "61,97€",
-  precio_now:    "60€",
+  precio_now:    "59€",
   precio_badge:  "Ahorra 2,97€",
   precio_sub:    "Envío gratuito · Pago seguro · 30 días para devolver",
 
@@ -797,7 +784,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-
 <!-- ANN -->
 <div class="ann" id="ann"></div>
 
@@ -834,19 +820,19 @@ document.addEventListener('DOMContentLoaded', () => {
       <span class="hero-pack-cd-sep">:</span>
       <div class="hero-pack-cd-block"><span class="hero-pack-cd-num" id="hcd-s">00</span><span class="hero-pack-cd-lbl">seg</span></div>
     </div>
-    <img src="pack-verano.png" alt="Pack Verano">
+    <img src="pack-verano.jpg" alt="Pack Verano">
   </div>
   <div class="hero-content">
-    <div class="hero-eyebrow" style="opacity:0;animation:slideUp .7s .1s cubic-bezier(.16,1,.3,1) forwards" id="hero-label"></div>
-    <h1 class="hero-h1" id="hero-h1" style="opacity:0;animation:slideUp .9s .25s cubic-bezier(.16,1,.3,1) forwards"></h1>
-    <p class="hero-sub" id="hero-sub" style="opacity:0;animation:slideUp .8s .45s cubic-bezier(.16,1,.3,1) forwards"></p>
+    <div class="hero-eyebrow" id="hero-label"></div>
+    <h1 class="hero-h1" id="hero-h1"></h1>
+    <p class="hero-sub" id="hero-sub"></p>
     <div class="hero-price">
       <div class="hero-price-was" id="hero-was"></div>
       <div class="hero-price-now">
         <span id="hero-now"></span>
       </div>
     </div>
-    <a class="hero-cta cta-btn" id="hero-cta" href="#pack-section">
+    <a class="hero-cta cta-btn" id="hero-cta">
       <span></span>
       <span class="hero-cta-arrow">→</span>
     </a>
@@ -936,15 +922,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <a class="pack-cta cta-btn" id="pack-cta">
           Conseguir el Pack <span style="margin-left:8px">→</span>
         </a>
-        <div class="stock-bar-wrap">
-          <div class="stock-bar-label">
-            <span>⬤ Stock disponible</span>
-            <span>47 / 200 packs</span>
-          </div>
-          <div class="stock-bar-track">
-            <div class="stock-bar-fill" id="stock-bar-fill"></div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -966,7 +943,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="wrap">
     <div class="reviews-intro">
       <div class="reviews-stars">★★★★★</div>
-      <div class="reviews-count">4.8 / 5 · Más de <span class="count-up" data-target="4800">0</span> clientas satisfechas</div>
+      <div class="reviews-count">4.8 / 5 · Más de 4.800 clientas satisfechas</div>
       <span class="section-label" style="margin-top:20px" id="rev-label"></span>
       <h2 class="section-title" id="rev-h2"></h2>
     </div>
@@ -999,7 +976,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </p>
     <div style="display:flex;align-items:baseline;justify-content:center;gap:16px;margin-bottom:36px">
       <span style="font-family:var(--serif);font-size:22px;color:rgba(255,255,255,0.2);text-decoration:line-through">61,97€</span>
-      <span style="font-family:var(--serif);font-size:72px;color:var(--white);font-weight:400;line-height:1"><sup style="font-size:32px;vertical-align:super">€</sup>60</span>
+      <span style="font-family:var(--serif);font-size:72px;color:var(--white);font-weight:400;line-height:1"><sup style="font-size:32px;vertical-align:super">€</sup>59</span>
     </div>
     <a href="https://victoriamendez.es" class="cta-btn" style="display:inline-flex;align-items:center;gap:12px;background:var(--white);color:var(--black);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:20px 48px;border:none;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s;margin-bottom:36px">
       Conseguir el Pack Verano <span style="font-size:15px">→</span>
@@ -1041,27 +1018,6 @@ document.addEventListener('DOMContentLoaded', () => {
   <span class="sticky-price" id="sticky-price"></span>
   <button class="sticky-btn" id="sticky-cta"></button>
 </div>
-
-<!-- ANIMACIONES MODERNAS -->
-<script>
-(function(){
-  document.addEventListener('DOMContentLoaded',()=>{
-    // Barra de stock
-    setTimeout(()=>{const fill=document.getElementById('stock-bar-fill');if(fill)fill.style.width='23.5%';},800);
-
-    // Count-up
-    const countIO=new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        if(!e.isIntersecting)return;
-        const el=e.target,target=+el.dataset.target,dur=2000,start=performance.now();
-        function step(now){const p=Math.min((now-start)/dur,1),ease=1-Math.pow(1-p,3);el.textContent=Math.round(ease*target).toLocaleString('es-ES');if(p<1)requestAnimationFrame(step);}
-        requestAnimationFrame(step);countIO.unobserve(el);
-      });
-    },{threshold:0.3});
-    document.querySelectorAll('.count-up').forEach(el=>countIO.observe(el));
-  });
-})();
-</script>
 
 <!-- Fix hero CTA text after render -->
 <script>
